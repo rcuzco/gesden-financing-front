@@ -1,0 +1,69 @@
+<div class="header-container header-desktop">
+    <div class="u-flex u-flex-align-items-center">
+        <div class="logo-img">
+            <img src="./assets/img/diseno/logo-sanitas.svg" alt="Sanitas" />
+        </div>
+        <div class="logo-txt">
+            {{'SHELL.COMPONENTS.HEADER.TITLE' | translate}}
+        </div>
+    </div>
+    <div class="u-relative pointer">
+        <div class="u-flex" (click)="actionTooltip()">
+            <div class="text-right">
+                <div class="user-name">
+                    {{gesdenService.getUserId()}}
+                </div>
+                <div class="user-company">
+                    {{'SHELL.COMPONENTS.HEADER.SANITAS' | translate}}
+                </div>
+            </div>
+            <div class="user-img">
+                <!-- <img src="./assets/img/276t.png" alt="Usuario"> -->
+                <span class="icn-logout"> </span>
+            </div>
+        </div>
+        <div class="disconect-container" *ngIf="tooltip" (click)="logout()">
+                {{'SHELL.COMPONENTS.HEADER.LOGOUT' | translate}}
+        </div>
+    </div>
+</div>
+<div class="header-mobile">
+    <button class="burger-menu" (click)="actionMobileMenu()">
+        <img src="./assets/img/burger-menu.svg" alt="" class="burger-menu-img" />
+    </button>
+    <div class="logo-mobile">
+        <img src="./assets/img/diseno/logo-sanitas.svg" alt="" class="logo-mobile-img" />
+    </div>
+</div>
+<div class="menu-mobile" [ngClass]="{'openMobile': mobileMenu}">
+    <div class="menu-mobile-back" (click)="actionMobileMenu()"></div>
+ 
+    <div class="menu-mobile-container u-flex-column">
+            <div class="close-menu" (click)="actionMobileMenu()">
+                <div class="icn-dropdown-up"></div>
+            </div>
+            <div class="menu-mobile-info">
+                <div class="user-img">
+                    <!-- <img src="assets/images/thumbnail/519.png" alt="Usuario"> -->
+                    <!-- <img src="./assets/img/276t.png" alt="Usuario"> -->
+                    <img src="./assets/img/diseno/logo-sanitas.svg" alt="Sanitas" />
+                </div>
+                <div class="user-name">
+                    {{gesdenService.getUserId()}}
+                </div>
+                <div class="user-company">
+                    {{'SHELL.COMPONENTS.HEADER.SANITAS' | translate}}
+                </div>
+                <div class="log-out">
+                    {{'SHELL.COMPONENTS.HEADER.LOGOUT' | translate}}
+                </div>
+            </div>
+            <div class="nav-tab-mobile">
+                <div class="nav-tab-item" *ngFor="let item of listSection | keys" [ngClass]="{selected: activeNav === item.value.id}" (click)="selection(item)">
+                    <div class="nav-tab-txt">
+                        {{item.value.name | translate}}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

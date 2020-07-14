@@ -1,0 +1,64 @@
+@import "../../../../assets/css/itcss/settings/settings";
+@import "../../../../assets/css/itcss/tools/tools";
+
+.o-shell {
+  @include sas-tablet-portrait-up {
+    @include sas-rem(padding-top, 56px);
+    @include sas-rem(margin-left, 80px);
+  }
+  @include sas-tablet-landscape-up {
+    @include sas-rem(margin-left, 80px);
+  }
+  @include sas-desktop-up {
+    @include sas-rem(margin-left, 80px);
+  }
+}
+
+// TODO: remove on next library release
+.c-sbc-menu-complex {
+  z-index: 1000;
+  &__content {
+    flex-direction: column;
+  }
+}
+
+
+//Ancho máximo del container principal
+//Medida general
+@media only screen and (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+//Medida responsive
+@media only screen and (min-width: 1281px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: calc(100% - 30px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: calc(100% - 30px);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: calc(100% - 30px);
+  }
+}
+
+//Pinta el resto de la pantalla de gris con una altura mínima
+.bggrey {
+  min-height: calc(100vh - 187px);
+  padding-bottom: 4rem;
+
+}

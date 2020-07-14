@@ -1,0 +1,112 @@
+<div class="o-grid">
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.PATIENT_NIF"></div>
+        <div class="table-data">{{request.patient.docId}}</div>
+    </div>
+    <div class="o-grid__cell  o-grid__cell--md-3">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_NAME"></div>
+        <div class="table-data">{{request.customer.firstName + ' ' + request.customer.lastName}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_NIF"></div>
+        <div class="table-data">{{request.customer.docId}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-5">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_RESIDENCE"></div>
+        <div class="table-data">{{request.customer.address}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_EMAIL"></div>
+        <div class="table-data">{{request.customer.mail}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-1">
+        <div translate="HOME.COMPONENTS.ADD_DOC.AMOUNT"></div>
+        <div *ngIf="request.financingRequestDetail" class="table-data" translate="HOME.COMPONENTS.ADD_DOC.AMOUNT">
+            {{request.financingRequestDetail.amount | currency: 'EUR'}}
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.MONTHS"></div>
+        <div *ngIf="request.financingRequestDetail" class="table-data">{{request.financingRequestDetail.months}} <span translate="HOME.COMPONENTS.CALCULATE_BUDGETS.MONTH"></span></div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.FEE"></div>
+        <div *ngIf="request.financingRequestDetail" class="table-data">{{request.financingRequestDetail.monthlyPayment | currency: 'EUR'}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.TIS"></div>
+        <div class="table-data">
+            {{request.financingCheckDetail.tisCheckDate | date: 'dd/MM/yyyy'}}
+            <span [translate]="'HOME.COMPONENTS.ADD_DOC.' + (request.financingCheckDetail.tisCheck ? '': 'NOT_') + 'APPROVED'"></span>
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.ASNEF"></div>
+        <div class="table-data">
+            <span *ngIf="request.financingCheckDetail.asnefCheckDate">
+                {{request.financingCheckDetail.asnefCheckDate | date: 'dd/MM/yyyy'}}
+                <span [translate]="'HOME.COMPONENTS.ADD_DOC.' + (request.financingCheckDetail.asnefCheck ? '': 'NOT_') + 'APPROVED'"></span>
+            </span>
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.documentAttachment?.nifPatient">
+        <div translate="HOME.COMPONENTS.ADD_DOC.PATIENT_NIF"></div>
+        <div class="table-data pointer" (click)="getDocument(request.id, request.documentAttachment.nifPatient)">
+            {{getShowDocName(request.documentAttachment.nifPatient)}}
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.documentAttachment?.nifClient">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_NIF"></div>
+        <div class="table-data pointer" (click)="getDocument(request.id, request.documentAttachment.nifClient)">
+            {{getShowDocName(request.documentAttachment.nifClient)}}
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.documentAttachment?.bankDocument">
+        <div translate="HOME.COMPONENTS.ADD_DOC.BANK_DOCUMENT"></div>
+        <div class="table-data pointer" (click)="getDocument(request.id, request.documentAttachment.bankDocument)">
+            {{getShowDocName(request.documentAttachment.bankDocument)}}
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.documentAttachment?.requestAttachment">
+        <div translate="HOME.COMPONENTS.ADD_DOC.REQUEST"></div>
+        <div class="table-data pointer" (click)="getDocument(request.id, request.documentAttachment.requestAttachment)">
+            {{getShowDocName(request.documentAttachment.requestAttachment)}}
+        </div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.iban">
+        <div translate="HOME.COMPONENTS.ADD_DOC.IBAN"></div>
+        <div class="table-data">{{request.iban}}</div>
+    </div>
+
+    <!-- MANDATO -->
+    <div class="o-grid__cell o-grid__cell--md-3"  *ngIf="request.documentAttachment?.command">
+        <div translate="HOME.COMPONENTS.ADD_DOC.ORDER"></div>
+        <div class="table-data pointer" (click)="getDocument(request.id, request.documentAttachment.command)">
+            {{request.documentAttachment.command}}
+        </div>
+    </div>
+    <!-- MOTIVO USUARIO GENÉRICO DENTAL -->
+    <div class="o-grid__cell o-grid__cell--md-12 u-overflow-x"  *ngIf="request.financingCheckDetail?.reason">
+        <div translate="HOME.COMPONENTS.ADD_DOC.APROVE_REASON"></div>
+        <div class="table-data">{{request.financingCheckDetail.reason}}</div>
+    </div>
+    <!-- FECHA PRIMERA CUOTA -->
+    <div class="o-grid__cell o-grid__cell--md-3" *ngIf="request.financingRequestDetail?.dateFrom && showFirstPay">
+        <div translate="HOME.COMPONENTS.ADD_DOC.FIRST_INSTALLMENT_DATE"></div>
+        <div class="table-data">{{request.financingRequestDetail.dateFrom | date: 'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell--md-12 u-overflow-x" *ngIf="showReason">
+        <div class="form-group">
+            <label translate="HOME.COMPONENTS.ADD_DOC.APROVE_REASON"></label>
+            <textarea [(ngModel)]="reason" maxlength="255" placeholder="{{'HOME.COMPONENTS.ADD_DOC.APROVE_REASON_PLACEHOLDER' | translate}}"></textarea>
+        </div>
+    </div>
+</div>
+<div class="botonera" *ngIf="buttons">
+    <button 
+    [disabled]="button.compulsoryReason && !reason"
+    *ngFor="let button of buttons; trackBy:trackButtons" 
+    type="button" class="btn btn-terciary" 
+    (click)="button.action()"
+    >{{'HOME.COMPONENTS.ADD_DOC.' + button.name | translate}}</button>
+</div>

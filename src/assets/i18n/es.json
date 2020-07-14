@@ -1,0 +1,196 @@
+{
+  "SHELL": {
+    "COMPONENTS": {
+      "HEADER":{
+        "TITLE":"Portal de autofraccionamiento",
+        "SANITAS":"Sanitas Nuevos Negocios S.L.U",
+        "LOGOUT":"Cerrar sesión"
+      }
+    }
+  },
+  "HOME": {
+    "COMPONENTS": {
+      "BTN_BLOCK_BOTTOM": {
+        "BEFORE": "Anterior"
+      },
+      "FEASIBILITY_RESULT": {
+        "TITLE": "Resultado de viabilidad",
+        "TIS": "TIS",
+        "ASNEF": "ASNEF",
+        "YES_FEASIBILITY": "El paciente es autofraccionable.",
+        "NO_FEASIBILITY": "El paciente no es autofraccionable.",
+        "ASNEF_PENDING": "Pendiente validación ASNEF."
+      },
+      "LIST_BUDGETS":{
+        "N_BUDGETS":"Nº presupuesto",
+        "DATES":"Fecha",
+        "STATUS":"Estado",
+        "DESCRIPTION":"Descripción",
+        "AMOUNT":"Importe",
+        "TOTAL_AMOUNT":"Importe total",
+        "NO_RESULTS": "No se han encontrado presupuestos en la búsqueda actual, por favor modifique el rango de fechas establecido"
+      },
+      "CALCULATE_BUDGETS":{
+        "TITLE":"Cálculo del autofraccionamiento",
+        "FRAC_AMOUNT":"Importe a fraccionar",
+        "AMOUNT":"Importe",
+        "TOTAL_AMOUNT":"Importe total presupuestos seleccionados",
+        "MONTHS":"Plazo en meses",
+        "TERM":"Plazo",
+        "FEE":"Cuota",
+        "MONTH":" meses"
+      },
+      "FILTERS":{
+        "BUTTON":"Filtros",
+        "DATES":"Fechas",
+        "N_HISTORY":"Número de historia",
+        "N_REQUEST":"Número de Solicitud",
+        "STATUS":"Estado",
+        "CENTER":"Centro",
+        "SEARCH":"Buscar",
+        "DOWNLOAD_EXCEL": "Descargar Excel"
+      },
+      "INFO_BOX": {
+        "TITLE_CUSTOMER": "Datos del cliente",
+        "TITLE_PACIENT": "Datos del paciente",
+        "N_CARD": "Nº de Tarjeta",
+        "NAME": "Nombre",
+        "LASTNAME": "Apellidos",
+        "TYPE_DOCUMENT": "Tipo de documento",
+        "CODE_DOCUMENT": "Código de documento",
+        "N_HISTORY": "Nº historia",
+        "EMAIL": "Email",
+        "ADDRESS": "Domicilio"
+      },
+      "INFO_USER": {
+        "USER": "Usuario de Gesden",
+        "CENTER": "Nombre del centro de la solicitud"
+      },
+      "INFO_FINANCING":{
+        "TITLE":"Datos del autofraccionamiento",
+        "N_BUDGET":"Nº Presupuesto",
+        "TOTAL_AMOUNT":"Importe Total",
+        "TERM":"Plazo",
+        "AMOUNT_FEE":"Importe Cuotas"
+      },
+      "NAV_TABS": {
+        "PROCESS": "Proceso de autofraccionamiento",
+        "REQUESTS": "Consulta de solicitudes generadas"
+      },
+      "MODAL": {
+        "ASK_NIF": "¿Está seguro de que la persona que efectuará los pagos del autofraccionamiento es  {{name}} {{lastName}}, con {{documentType}} {{documentId}}?",
+        "ASK_PEOPLE": "¿Está seguro de que el cliente que está consultando corresponde al pagador del autofraccionaminento?",
+        "TITLE_GESDEN":"Consulta de usuario GESDEN",
+        "INCORRECT_BUDGET":"El importe seleccinado está fuera de los límites permitidos ({{valueMin}} - {{valueMax}} €). Si continúa, la solicitud quedará Denegada automáticamente. ¿Desea continuar?",
+        "INCORRECT_BUDGER_ALERT": "Esta solicitud de autofraccionamiento está fuera de los límites establecidos ({{valueMin}} y {{valueMax}} €); puede modificar el importe a fraccionar o ponerse en contacto con el departamento financiero.",
+        "BUTTON_YES": "Si",
+        "BUTTON_NO": "No",
+        "BUTTON_ACCEPT": "Aceptar"
+      },
+      "ALERT": {
+        "INCORRECT_NIF": "Debe asignar como cliente de facturación predeterminada en Gesden a la persona que efectuará los pagos del autofraccionamiento, y volver la solicitud con los datos correctos.",
+        "INCORRECT_PEOPLE":"Debe asignar como cliente de facturación predeterminada en Gesden a la persona que efectuará los pagos del autofraccionamiento, y volver la solicitud con los datos correctos."
+      },
+      "ALERT_INFO":{
+        "FILTERS":"<strong>Atención:</strong> Esta información es relativa a los <strong>últimos 3 meses</strong>. Para más información utilice los filtros de fecha.",
+        "STAND":"Entendido"
+      },
+      "SUCCESS_MSG":{
+        "OK_REQUEST":"La solicitud ha sido <strong>registrada</strong> con éxito",
+        "N_REQUEST":"Número de Solicitud",
+        "BUTTON_PRINT":"Aceptar/Imprimir"
+      },
+      "BTN_BOTTOM":{
+        "NEXT":"Siguiente"
+      },
+      "STEP_BAR":{
+        "CONSULTA":"Consulta de viabilidad",
+        "SELECCION":"Selección de presupuesto y autofraccionamiento",
+        "GENERAR":"Generar solicitud"
+      },
+      "ADD_DOC": {
+        "TITLE": "Adjuntar documentación",
+        "CLOSE": "Cerrar",
+        "PATIENT_NIF": "Documento del paciente",
+        "PATIENT_NAME": "Nombre paciente",
+        "CLIENT_NAME": "Nombre cliente",
+        "CLIENT_NIF": "Documento del cliente",
+        "CLIENT_RESIDENCE": "Domicilio cliente",
+        "CLIENT_EMAIL": "Email cliente",
+        "AMOUNT": "Importe",
+        "MONTHS": "Plazo",
+        "FEE": "Cuotas",
+        "TIS": "TIS",
+        "ASNEF": "ASNEF",
+        "DRAG_FILE": "Arrastra tu archivo o utiliza el botón para subirlo",
+        "NO_DRAG_FILE": "Utilice el botón de adjuntar el archivo",
+        "CHECK_IBAN": "La titularidad del IBAN coincide con la del cliente",
+        "APPROVED": "Superado",
+        "NOT_APPROVED": "No superado",
+        "BANK_DOCUMENT": "Documento bancario",
+        "REQUEST": "Solicitud",
+        "IBAN": "IBAN",
+        "APROVE_REASON": "Motivo",
+        "APROVE_REASON_PLACEHOLDER": "Introducir motivo (obligatorio en caso de devolución)",
+        "ADD_DOC": "Adjuntar",
+        "CANCEL": "Cancelar",
+        "VALIDATE": "Validar",
+        "RETURN": "Devolver",
+        "REFUSE_ASNEF": "Denegar ASNEF",
+        "SAVE": "Guardar",
+        "COMPULSORY_FIELD": "Campo obligatorio",
+        "FORM_RULES": "Los formatos para los archivos permitidos son: .pdf .png y .jpg. El tamaño máximo de cada archivo debe ser 2 Megabytes y el tamaño total, 10 Megabytes.",
+        "ERROR_MAX_SIZE": "Excedido el tamaño total permitido para los documentos adjuntados",
+        "GENERATE_ORDER": "Generar mandato",
+        "ADD_ORDER": "Adjuntar mandato",
+        "ORDER": "Mandato",
+        "FIRST_INSTALLMENT_DATE": "Fecha primera cuota"
+
+      }
+    },
+    "CONTAINERS": {
+      "FRACTIONATION_PROCESS":{
+        "TITLE": "Proceso de AutoFraccionamiento",
+        "REQUEST_PROCESS": "Solicitud en Proceso",
+        "REQUEST_KO":"Solicitud Denegada",
+        "REQUEST_KO_TIS":"Solicitud Denegada por TIS",
+        "REQUEST_KO_ASNEF":"Solicitud Denegada por ASNEF",
+        "REQUEST_OK":"Solicitud Registrada",
+        "REQUEST_INOK":"Solicitud Registrada Incompleta",
+        "REQUEST_REVIEW_DOC":"Pendiente Revisar por el Centro",
+        "REQUEST_APPROVED":"Solicitud Aprobada",
+        "REQUEST_VALIDATE_DOC": "Pendiente Validar por Finanzas"
+      },
+      "FEASIBILITY_REQUEST": {
+        "VIABILITY": "Consultar viabilidad"
+      },
+      "LIST_REQUEST":{
+        "TITLE":"Consulta de solicitudes generadas",
+        "NO_RESULTS": "No se ha encontrado ningún resultado para el filtro establecido",
+        "TABLE":{
+          "NAME":"Nombre y Apellidos",
+          "N_REQUEST":"Nº de Solicitud",
+          "N_HISTORY":"Nº Historia",
+          "DATE":"Fecha",
+          "CENTER":"Centro",
+          "STATUS":"Estado",
+          "PDF_REQUEST": "_solicitud"
+        }
+      }
+    }
+  },
+  "ERROR": {
+    "ACCEPT": "Aceptar",
+    "DEFAULT_MESSAGE": "Se ha producido un error inesperado",
+    "PF-001": "El usuario no tiene permisos sobre el centro seleccionado",
+    "PF-002": "No se han encontrado resultados",
+    "PF-003": "El cliente seleccionado no es asegurado de Sanitas. Por favor, revise que los datos son correctos.",
+    "PF-004": "El usuario no tiene asignado ningún centro. Por favor, póngase en contacto con el CAU Dentales.",
+    "PF-005": "El cliente/paciente seleccionado no es del centro seleccionado",
+    "PF-011": "Se ha producido un error durante la obtención de los presupuestos del cliente. Por favor, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto con el CAU Dental. ",
+    "PF-704": "Se ha producido un error al generar la documentación de su solicitud. Por favor, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto con el CAU Dental.",
+    "PF-804": "Se ha producido un error durante la consulta al servicio de fraccionamiento de ASNEF. Por favor, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto con el CAU Dental.",    
+    "PF-904": "Se ha producido un error durante la consulta al servicio de fraccionamiento de TIS. Por favor, inténtelo de nuevo más tarde. Si el problema persiste, póngase en contacto con el CAU Dental.",
+    "BC-501": "Datos incompletos del cliente"
+  }
+}

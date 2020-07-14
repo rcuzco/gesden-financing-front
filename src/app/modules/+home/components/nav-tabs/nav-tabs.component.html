@@ -1,0 +1,7 @@
+<div class="nav-tab-container">
+    <div *ngFor="let item of listSection | keys" [ngClass]="{selected: activeNav === item.value.id}" (click)="selection(item)" class="nav-tab-item">
+        <div class="nav-tab-txt">
+            {{item.value.name | translate}}
+        </div>
+    </div>
+</div>

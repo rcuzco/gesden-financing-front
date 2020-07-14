@@ -1,0 +1,65 @@
+// Contenedor general de la aplicación
+// -------------------------
+
+.o-wrap {
+  @include sas-rem(
+    (
+      min-width: 360px,
+      padding-top: 88px,
+      padding-bottom: 40px
+    )
+  );
+  @include sas-tablet-portrait-up {
+    @include sas-rem(padding-top, 56px);
+    @include sas-rem(margin-left, 56px);
+  }
+  @include sas-tablet-landscape-up {
+    @include sas-rem(margin-left, 56px);
+  }
+  @include sas-desktop-up {
+    @include sas-rem(margin-left, 80px);
+  }
+  &--breadcrumb {
+    background-color: $color-white;
+    min-height: 100vh;
+    @include sas-tablet-portrait-up {
+      @include sas-rem(padding-top, 112px);
+    }
+    @include sas-tablet-landscape-up {
+      background-color: inherit;
+    }
+  }
+  &--filters {
+    @include sas-tablet-landscape-up {
+      @include sas-rem(margin-right, 320px);
+    }
+  }
+  // Envoltorio auxiliar en posición absoluta, hasta ahora usado en conjunción con el componente <c-sas-tab>
+  &-auxiliary  {
+    @include sas-rem(top, 40px);
+    width: 100%;
+    left: 0;
+    color: $color-black;
+    position: absolute;
+    @include sas-tablet-portrait-up {
+      @include sas-rem(top, 56px);
+    }
+    @include sas-tablet-landscape-up {
+      @include sas-rem(margin-left, 56px);
+      width: calc(100% - 56px);
+    }
+    @include sas-desktop-up {
+      @include sas-rem(margin-left, 80px);
+      width: calc(100% - 80px);
+    }
+  }
+  &--submenu-open {
+    @include sas-full-up {
+      @include sas-rem(margin-left, 320px);
+    }
+    .o-wrap-auxiliary {
+      @include sas-rem(margin-left, 320px);
+      width: calc(100% - 320px);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "mock-server",
+  "version": "0.6.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "path": "0.12.7",
+    "serve-favicon": "2.5.0"
+  },
+  "devDependencies": {}
+}

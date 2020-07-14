@@ -1,0 +1,172 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ncikrm');
+  src:  url('fonts/icomoon.eot?ncikrm#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ncikrm') format('truetype'),
+    url('fonts/icomoon.woff?ncikrm') format('woff'),
+    url('fonts/icomoon.svg?ncikrm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icn-"], [class*=" icn-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon', sans-serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icn-error:before {
+  content: "\e908";
+  color: #d81e05;
+}
+.icn-adjuntar:before {
+  content: "\e909";
+}
+.icn-close1 .path1:before {
+  content: "\e90a";
+  color: rgb(216, 30, 5);
+}
+.icn-close1 .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icn-ver-pdf-orange:before {
+  content: "\e903";
+  color: #fe5000;
+}
+.icn-ok-selected .path1:before {
+  content: "\e901";
+  color: rgb(0, 122, 61);
+}
+.icn-ok-selected .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icn-close:before {
+  content: "\e900";
+}
+.icn-logout:before {
+  content: "\e905";
+  color: #fe5000;
+}
+/* .icn-adjuntar .path1:before {
+  content: "\e904";
+  color: none;
+}
+.icn-adjuntar .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(29, 29, 27);
+}
+.icn-adjuntar .path3:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+} */
+.icn-calendar:before {
+  content: "\e90e";
+}
+.icn-centro:before {
+  content: "\e90f";
+}
+.icn-close-filter:before {
+  content: "\e914";
+}
+.icn-confirmation-alert:before {
+  content: "\e915";
+}
+.icn-descargar .path1:before {
+  content: "\e916";
+  color: none;
+}
+.icn-descargar .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(29, 29, 27);
+}
+.icn-descargar .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.icn-dropdown-up:before {
+  content: "\e91b";
+  color: #0079c8;
+}
+.icn-error-alert:before {
+  content: "\e91c";
+}
+.icn-excel-azul:before {
+  content: "\e91d";
+}
+.icn-fraccionamiento:before {
+  content: "\e91e";
+}
+.icn-key-pass:before {
+  content: "\e91f";
+}
+.icn-mail:before {
+  content: "\e920";
+}
+.icn-quitar:before {
+  content: "\e921";
+}
+.icn-solici-denegada:before {
+  content: "\e92a";
+}
+.icn-solici-incompleta:before {
+  content: "\e92b";
+}
+.icn-solici-proceso:before {
+  content: "\e92c";
+}
+.icn-solici-registrada-aprob:before {
+  content: "\e92d";
+}
+.icn-solicitud:before {
+  content: "\e92e";
+}
+.icn-usuario-gesden:before {
+  content: "\e92f";
+}
+.icn-ver-pdf:before {
+  content: "\e930";
+}
+.icn-viabilidad:before {
+  content: "\e931";
+}
+.icn-warning:before {
+  content: "\e932";
+}
+
+/* ICONOS SOLICITUDES */
+.sol-ko .icn-icon-status:before {
+  content: "\e92a";
+}
+.sol-inko .icn-icon-status:before {
+  content: "\e92b";
+}
+.sol-inprogress .icn-icon-status:before {
+  content: "\e92c";
+}
+.sol-ok .icn-icon-status:before {
+  content: "\e92d";
+}
+
+/* ICONO ERROR MODAL ERROR */
+/* .icon-error-linear:before {
+  content: "\e908";
+  color: #d81e05;
+} */

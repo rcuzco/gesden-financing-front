@@ -1,0 +1,57 @@
+<div class="table-container u-scrollbar-x">
+    <table class="table table-responsive u-scrollbar-x">
+        <thead>
+            <tr>
+                <th scope="col">{{'HOME.COMPONENTS.LIST_BUDGETS.N_BUDGETS' | translate}}</th>
+                <th scope="col">{{'HOME.COMPONENTS.LIST_BUDGETS.DATES' | translate}}</th>
+                <th scope="col">{{'HOME.COMPONENTS.LIST_BUDGETS.STATUS' | translate}}</th>
+                <th scope="col">{{'HOME.COMPONENTS.LIST_BUDGETS.DESCRIPTION' | translate}}</th>
+                <th scope="col">{{'HOME.COMPONENTS.LIST_BUDGETS.AMOUNT' | translate}}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngIf="budgets.length">
+            <tr *ngFor="let budget of budgets; let i = index">
+                <td>
+                    <div class="round-border">{{budget.id}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{budget.date | date: 'dd/MM/yyyy'  }}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{budget.status}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{budget.description}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{budget.amount | currency:'EUR'}}</div>
+                </td>
+                <td>
+                    <div class="round-border">
+                        <div class="tick-check">
+                            <input type="checkbox" id="checkAmount{{i}}" (click)="selectBudget($event,budget)" />
+                            <ng-container *ngIf="budget.checked; else elseTemplate">
+                                <img class="check-img" src="./assets/img/icons/icn-ok-selected.svg" alt="" />
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <img class="check-img" src="./assets/img/icons/icn-ok-disabled.svg" alt="" />
+                            </ng-template>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="no-result-msg" *ngIf="!budgets.length && showBudgetMsg">
+    {{'HOME.COMPONENTS.LIST_BUDGETS.NO_RESULTS' | translate}}
+</div>
+<div class="summary-line">
+    <div class="summary-line-txt">
+        {{'HOME.COMPONENTS.LIST_BUDGETS.TOTAL_AMOUNT' | translate}}:
+    </div>
+    <div class="summary-line-data">
+        {{totalAmount | currency:'EUR'}}
+    </div>
+</div>

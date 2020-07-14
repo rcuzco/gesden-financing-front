@@ -1,0 +1,68 @@
+// Elemento media object
+// -------------------------
+
+$module: ".o-media";
+
+@mixin media-states($background, $body, $footer) {
+  background-color: $background;
+  #{$module}__txt,
+  .o-ico {
+    color: $body;
+  }
+  #{$module}__footer {
+    @if $footer {
+      color: $footer;
+    } @else {
+      color: $body;
+    }
+  }
+}
+
+#{$module} {
+  @include sas-rem(padding-top, 12px);
+  display: flex;
+  &__content {
+    @include sas-rem(margin-left, 16px);
+    flex: auto;
+    border-bottom: 1px solid $color-very-light-grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-raven;
+    font-weight: 300;
+    overflow: hidden;
+  }
+  &__body {
+    @include sas-rem(
+      (
+        font-size: 12px,
+        padding-bottom: 12px
+      )
+    );
+    overflow: hidden;
+  }
+  &__footer {
+    @include sas-rem(
+      (
+        font-size: 10px,
+        margin-left: 8px
+      )
+    );
+    flex: none;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  &__btn {
+    @include sas-rem(margin-left, 8px);
+  }
+  &--error {
+    @include media-states($color-beige, $color-red, null);
+  }
+  &--warning {
+    @include media-states($color-pale, $color-greenish-brown, null);
+  }
+  &--success {
+    @include media-states($color-white, $color-cerulean, $color-raven);
+  }
+}

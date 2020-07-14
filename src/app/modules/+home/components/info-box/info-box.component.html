@@ -1,0 +1,59 @@
+<div class="box">
+    <div class="box-top subtitle">
+        {{ titleBox | translate}}
+    </div>
+    <div class="box-data">
+        <div class="box-data-col">
+            <div class="box-data-group" *ngIf="infoFinancing?.cardNumber">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.N_CARD' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.cardNumber}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.NAME' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.firstName}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.LASTNAME' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.lastName}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.TYPE_DOCUMENT' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.docType ? docTypes[infoFinancing?.docType].value : '-'}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.CODE_DOCUMENT' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.docId}}</div>
+            </div>
+        </div>
+        <div class="box-data-col">
+            <div class="box-data-group" *ngIf="infoFinancing?.medicalRecordId">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.N_HISTORY' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.medicalRecordId}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.EMAIL' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.mail}}</div>
+            </div>
+            <div class="box-data-group  flex-wrap">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_BOX.ADDRESS' | translate}}:
+                </div>
+                <div class="box-data-info">{{infoFinancing?.address}}</div>
+            </div>
+        </div>
+    </div>
+</div>

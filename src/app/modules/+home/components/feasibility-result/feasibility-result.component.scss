@@ -1,0 +1,63 @@
+@import "../../../../../variables.scss";
+//ESTILOS CONTAINER DE VIABILIDAD
+.viability {
+  &-container {
+    margin-top: 3rem;
+  }
+  &-box {
+    color: $cyan;
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    &-row {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+  }
+  &-item,
+  &-icon,
+  &-txt {
+    border: 1.5px solid;
+    border-radius: 40px;
+  }
+  &-icon {
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    margin: 0 1.5rem;
+    padding: 1.5rem;
+  }
+  &-status {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.8rem;
+    width: 100%;
+    &.sol-ko {
+      .viability-icon {
+        background-color: $red;
+        border-color: $red;
+      }
+    }
+    &.sol-ok {
+      .viability-icon {
+        background-color: $green;
+        border-color: $green;
+      }
+    }
+  }
+  &-item {
+    box-sizing: content-box;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 1.5rem 5rem;
+    text-align: center;
+    width: 72.469px;
+  }
+  &-txt {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    padding: 1.5rem 4rem;
+    width: 100%;
+  }
+}

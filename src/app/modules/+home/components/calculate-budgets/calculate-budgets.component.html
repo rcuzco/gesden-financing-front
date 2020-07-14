@@ -1,0 +1,73 @@
+<h2 class="subtitle">
+    {{'HOME.COMPONENTS.CALCULATE_BUDGETS.TITLE' | translate}}
+</h2>
+<div>
+    <form [formGroup]="calculateForm" class="calc-fracc-container" novalidate>
+        <div class="col-left">
+            <div class="form-group">
+                <label class="required">{{'HOME.COMPONENTS.CALCULATE_BUDGETS.FRAC_AMOUNT' | translate}}</label>
+                <div class="slidecontainer">
+                    <input #slider class="slider" name="slider" id="slider" max="{{totalAmount > valoresPresupuesto.maxAmount ? valoresPresupuesto.maxAmount : totalAmount}}" min="{{valoresPresupuesto.minAmount}}" step="0.1"
+                        type="range" formControlName="slider" />
+                </div>
+                <div class="min-max-container">
+                    <div>
+                        {{valoresPresupuesto.minAmount | currency:'EUR'}}
+                    </div>
+                    <div>
+                        {{totalAmount > valoresPresupuesto.maxAmount ? (valoresPresupuesto.maxAmount | currency:'EUR') : (totalAmount | currency:'EUR')}}
+                    </div>
+                </div>
+            </div>
+            <div class="fracc-input">
+                <p>{{'HOME.COMPONENTS.CALCULATE_BUDGETS.AMOUNT' | translate}} <strong class="t-cyan"></strong></p>
+                <div class="form-group u-relative">
+                    <input #inputSlider type="number" id="name" name="name" formControlName="inputSlider" class="form-control" required />
+                    <div class="currency">€</div>
+                </div>
+            </div>
+            <div class="u-flex u-flex-align-center">
+                <div class="square-check">
+                    <input type="checkbox" id="checkbox" formControlName="checkMax" (click)="checkMaxAmount($event)" />
+                    <label for="checkbox"></label>
+                </div>
+                <p class="t-cyan u-divider-left">
+                    {{'HOME.COMPONENTS.CALCULATE_BUDGETS.TOTAL_AMOUNT' | translate}}
+                </p>
+            </div>
+        </div>
+        <div class="col-right">
+            <div class="form-component">
+                <div class="form-group u-relative">
+                    <label class="required">{{'HOME.COMPONENTS.CALCULATE_BUDGETS.MONTHS' | translate}}</label>
+                    <sbc-input-select formControlName="month" placeHolder="a placeholder" [options]="months"></sbc-input-select>
+                </div>
+                <div class="summary-line">
+                    <div class="summary-line-txt">
+                        {{'HOME.COMPONENTS.CALCULATE_BUDGETS.FRAC_AMOUNT' | translate}}
+                    </div>
+                    <div class="summary-line-data">
+                        {{calculateForm.value.slider | currency:'EUR'}}
+                    </div>
+                </div>
+                <div class="summary-line">
+                    <div class="summary-line-txt">
+                        {{'HOME.COMPONENTS.CALCULATE_BUDGETS.TERM' | translate}}
+                    </div>
+                    <div class="summary-line-data">
+                        {{calculateForm.value.month ? calculateForm.value.month : 0}}
+                        {{'HOME.COMPONENTS.CALCULATE_BUDGETS.MONTH' | translate}}
+                    </div>
+                </div>
+                <div class="summary-line">
+                    <div class="summary-line-txt">
+                        {{'HOME.COMPONENTS.CALCULATE_BUDGETS.FEE' | translate}}
+                    </div>
+                    <div class="summary-line-data">
+                        {{amountFrac | currency:'EUR'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

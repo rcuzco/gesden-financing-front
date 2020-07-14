@@ -1,0 +1,58 @@
+//ESTILOS CAJAS DE INFO
+@import "../../../../../variables.scss";
+.box {
+  background-color: $white;
+  margin-bottom: 1rem;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &-top {
+    color: $cyan;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  &-data {
+    display: flex;
+    flex-flow: wrap;
+  }
+  &-data-block {
+    padding: 15px;
+  }
+  &-data-col {
+    padding: 1.5rem;
+    width: 50%;
+  }
+  &-data-info {
+    font-weight: 600;
+  }
+  &-data-title {
+    padding-right: 8px;
+  }
+  &-data-group {
+    display: flex;
+    flex-flow: row;
+    font-size: 1.6rem;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    &.flex-wrap {
+      flex-flow: wrap;
+      .box-data-title,
+      .box-data-info {
+        width: 100%;
+      }
+    }
+    .budget-item {
+      color: $navy;
+      font-size: 14px;
+    }
+  }
+}
+@media only screen and (max-width: 720px) {
+  .box-data-col {
+    &:not(:last-child) {
+      padding-bottom: 0;
+    }
+    width: 100%;
+  }
+}

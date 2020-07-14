@@ -1,0 +1,9 @@
+
+// Font-face
+// -------------------------
+
+@include sas-font-face(Montserrat, 'Montserrat-Light', 300);
+@include sas-font-face(Montserrat, 'Montserrat-Regular', 400);
+@include sas-font-face(Montserrat, 'Montserrat-Medium', 500);
+
+@include sas-font-face(icons, 'bupaicons_ds', 500);

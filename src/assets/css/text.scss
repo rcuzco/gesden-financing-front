@@ -1,0 +1,217 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 2.4rem;
+}
+
+//TAMAÑO TEXTOS
+.t-xs {
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+}
+
+.t-sm {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.t-md,
+.t-me {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.t-lg {
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+
+.t-xl {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
+p,
+ul,
+ol,
+dl {
+  line-height: 2.4rem;
+}
+
+p + ul {
+  margin-bottom: 2.4rem;
+}
+
+ol,
+p + dl {
+  margin-bottom: 2.4rem;
+}
+
+.t-cyan {
+  color: $cyan;
+}
+
+.t-orange {
+  color: $orange;
+}
+
+p.mini {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  margin-top: 0.8rem;
+}
+
+article {
+  text-align: left;
+}
+
+article p,
+article ul,
+article ol,
+article dl {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+* > p:last-child {
+  margin-bottom: 0;
+}
+
+.plus {
+  font-weight: 700;
+}
+
+.sub {
+  font-weight: 300;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title {
+  color: $orange;
+  font-size: 2.5rem;
+  margin: 3rem 0;
+
+  @media only screen and (max-width: 720px) {
+    margin: 2rem 0;
+  }
+}
+
+.subtitle {
+  color: $cyan;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+//Estilos generales de estados de solicitudes
+.request-status {
+  align-items: center;
+  display: flex;
+
+  [class^="icn-"],
+  [class*=" icn-"] {
+    font-size: 2.6rem;
+    padding-right: 5px;
+  }
+}
+
+.sol {
+  &-inprogress {
+    color: $cyan;
+  }
+
+  &-ko,
+  &-inko {
+    color: $red;
+  }
+
+  &-ok {
+    color: $green;
+  }
+}
+
+b.nif {
+  color: $navy;
+  font-size: 2.2rem;
+  width: 100%;
+}
+
+.required {
+  &:before {
+    color: $red;
+    content: "*";
+  }
+}
+
+.summary-line {
+  display: flex;
+  flex-flow: row;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: flex-end;
+  justify-content: space-between;
+  margin: 1rem 104px 1rem auto;
+  text-align: right;
+  width: 400px;
+
+  &-data {
+    color: $cyan;
+    text-align: right;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.blue-sm-label {
+  font-size: 14px;
+  color: $cyan;
+}
+
+.t-rojo {
+  color: $red;
+}
+
+.no-result-msg {
+  color: $grey75;
+  padding: 3rem 0;
+  text-align: center;
+}

@@ -1,0 +1,17 @@
+.btn-block-bottom {
+  display: flex;
+  @media only screen and (max-width: 576px) {
+    flex-flow: column;
+    .btn:first-child {
+      margin-bottom: 2rem;
+    }
+  }
+  margin: 4rem 0 2rem 0;
+  position: relative;
+  .btn.btn.btn-secondary:first-child:last-child {
+    margin-left: auto;
+  }
+  .btn.btn-terciary {
+    margin-right: auto;
+  }
+}

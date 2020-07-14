@@ -1,0 +1,35 @@
+<div class="viability-container">
+    <h2 class="subtitle">
+        {{'HOME.COMPONENTS.FEASIBILITY_RESULT.TITLE' | translate}}
+    </h2>
+    <div class="viability-box">
+        <div class="viability-box-row">
+            <div class="viability-item">
+                {{'HOME.COMPONENTS.FEASIBILITY_RESULT.TIS' | translate}}
+            </div>
+            <div class="viability-status"
+                [ngClass]="{'sol-ko': infoFeasibility?.tisCheck === false, 'sol-ok': infoFeasibility?.tisCheck === true}">
+                <div class="viability-icon"
+                    [ngClass]="{'icn-solici-denegada': infoFeasibility?.tisCheck === false, 'icn-solici-registrada-aprob': infoFeasibility?.tisCheck === true}">
+                </div>
+                <div class="viability-txt">
+                    {{ textTis | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="viability-box-row" *ngIf="infoFeasibility.tisCheck">
+            <div class="viability-item">
+                {{'HOME.COMPONENTS.FEASIBILITY_RESULT.ASNEF' | translate}}
+            </div>
+            <div class="viability-status"
+                [ngClass]="{'sol-ko': !infoFeasibility?.asnefCheck, 'sol-ok': infoFeasibility?.asnefCheck === true}">
+                <div class="viability-icon"
+                    [ngClass]="{'icn-solici-denegada': !infoFeasibility?.asnefCheck, 'icn-solici-registrada-aprob': infoFeasibility?.asnefCheck === true}">
+                </div>
+                <div class="viability-txt">
+                    {{ textAsnef | translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

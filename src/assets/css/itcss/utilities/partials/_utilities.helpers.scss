@@ -1,0 +1,133 @@
+// Ocultar visulamente elemento
+// -------------------------
+
+.u-visually-hidden {
+  @include sas-visually-hidden;
+}
+
+// Ocultar elemento
+// -------------------------
+
+.u-hidden {
+  display: none !important;
+}
+
+// Ocultar elemento solamente en vista móvil
+// -------------------------
+
+.u-sm-hidden {
+  display: none;
+
+  @include sas-tablet-portrait-up {
+    display: block;
+  }
+}
+
+.u-lg-hidden {
+  display: none;
+
+  @include sas-desktop-up {
+    display: block;
+  }
+}
+
+// Ocultar elemento en vista HD
+// -------------------------
+
+.u-hd-hidden {
+  @include sas-full-up {
+    display: none;
+  }
+}
+
+// Eliminar bordes
+// -------------------------
+
+.u-no-border {
+  border: none;
+}
+
+// Elementos deshabilitados
+// -------------------------
+
+.u-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+// Transición entrada en horizontal
+// -------------------------
+
+.u-entry {
+  transition: transform 0.2s linear;
+
+  &--left {
+    transform: translateX(-100%);
+  }
+
+  &--right {
+    transform: translateX(100%);
+  }
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+// Elipsis
+// -------------------------
+
+.u-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Generar scroll horizontal
+// -------------------------
+
+.u-overflow-x {
+  @include sas-rem(padding-bottom, 8px);
+
+  position: relative;
+  overflow-x: auto;
+}
+
+// Barras scroll con estilo (webkit)
+// -------------------------
+
+.u-scrollbar {
+  &-y {
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+  }
+
+  &-x {
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+  }
+}
+
+.u-scrollbar-y::-webkit-scrollbar,
+.u-scrollbar-x::-webkit-scrollbar {
+  &-thumb {
+    background-color: $color-silver;
+    border-radius: 4px;
+  }
+}
+
+// Posicionamiento elementos
+// -------------------------
+
+.u-relative {
+  position: relative;
+}
+
+// 100% ancho
+// -------------------------
+
+.u-width-100 {
+  width: 100%;
+}

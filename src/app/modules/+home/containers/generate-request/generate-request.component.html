@@ -1,0 +1,4 @@
+<sas-info-box *ngIf="financingData" [infoFinancing]="financingData?.patient"></sas-info-box>
+<sas-info-box *ngIf="financingData" [infoFinancing]="financingData?.customer"></sas-info-box>
+<sas-info-financing  *ngIf="financingData" [infoBudgets]="financingData?.financingBudgetDetails" [infoAmount]="financingData?.financingRequestDetail"></sas-info-financing>
+<sas-btn-block-bottom [textButton]="'Generar Solicitud'" [disabled]="false" (backButton)="backStep()" (nextButton)="generateRequest()"></sas-btn-block-bottom>

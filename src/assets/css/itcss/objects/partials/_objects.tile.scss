@@ -1,0 +1,111 @@
+// Contenedores genericos (pueden tener encabezado y pie)
+// -------------------------
+
+$module: ".o-tile";
+
+#{$module} {
+  background-color: $color-white;
+  &__header {
+    border-bottom: 1px solid $color-very-light-grey;
+  }
+  &__body {
+    @include sas-rem(margin-top, 24px);
+  }
+  &__footer {
+    @include sas-rem(
+      (
+        margin-top: 16px,
+        margin-bottom: 16px
+      )
+    );
+  }
+  &--fixed {
+    @include sas-rem(
+      (
+        width: 320px,
+        top: 48px,
+        padding-top: 16px,
+        height: calc(100vh - 48px)
+      )
+    );
+    padding-right: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 5;
+    box-shadow: 0px 3px 4px rgba($color-black, 0.2);
+    @include sas-tablet-portrait-up {
+      @include sas-rem(
+        (
+          height: calc(100vh - 56px),
+          top: 56px
+        )
+      );
+    }
+    #{$module} {
+      &__inner,
+      &__footer {
+        @include sas-rem(
+          (
+            padding-left: 16px,
+            padding-right: 16px
+          )
+        );
+      }
+      &__header {
+        @include sas-rem(
+          (
+            margin-left: 16px,
+            margin-right: 16px,
+            padding-bottom: 16px
+          )
+        );
+        position: relative;
+      }
+      &__btn {
+        @include sas-rem(
+          (
+            top: -4px,
+            padding: 4px
+          )
+        );
+        @include sas-transition(background-color);
+        right: 0;
+        position: absolute;
+        border-radius: 4px;
+        &:hover {
+          background-color: $color-dark-cerulean;
+          .o-ico {
+            color: $color-white;
+          }
+        }
+        &:active {
+          background-color: $color-silver;
+          .o-ico {
+            color: $color-night-rider;
+          }
+        }
+      }
+      &__body {
+        margin-top: 0;
+        height: 100%;
+      }
+      &__inner {
+        @include sas-rem(
+          (
+            padding-top: 16px,
+            height: calc(100% - 40px)
+          )
+        );
+        overflow-y: auto;
+      }
+    }
+  }
+  &--rounded {
+    @include sas-tablet-landscape-up {
+      @include sas-rem(padding, 16px 24px 40px);
+      border-radius: 8px;
+      border: 1px solid $color-very-light-grey;
+    }
+  }
+}

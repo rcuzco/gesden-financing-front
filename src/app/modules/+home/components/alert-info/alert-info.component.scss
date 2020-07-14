@@ -1,0 +1,19 @@
+@import "../../../../../variables.scss";
+
+.info {
+  background-color: $cyan;
+  color: $white;
+  .alert-btn {
+    font-weight: 600;
+    padding-left: 3rem;
+  }
+  .alert-separator {
+    background-color: $white;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 130px;
+    width: 1.5px;
+    top: 0;
+  }
+}

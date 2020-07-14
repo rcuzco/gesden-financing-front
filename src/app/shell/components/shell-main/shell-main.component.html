@@ -1,0 +1,12 @@
+<!-- <sbc-loading></sbc-loading> -->
+<ng-container>
+    <div class="container" [hidden]="!!getAddDocRequest()">
+        <sas-header></sas-header>
+    </div>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</ng-container>
+<ng-template #login>
+    <router-outlet></router-outlet>
+</ng-template>

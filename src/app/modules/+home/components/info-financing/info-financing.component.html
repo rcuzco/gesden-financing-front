@@ -1,0 +1,35 @@
+<div class="box">
+    <div class="box-top subtitle">
+        {{'HOME.COMPONENTS.INFO_FINANCING.TITLE' | translate}}
+    </div>
+    <div class="box-data">
+        <div class="box-data-col">
+            <div class="box-data-group flex-wrap">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_FINANCING.N_BUDGET' | translate}}:
+                </div>
+                <div class="box-data-info budget-item" *ngFor="let budget of infoBudgets">{{budget.budget}}&nbsp;{{budget.budgetName}}</div>
+            </div>
+        </div>
+        <div class="box-data-col">
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_FINANCING.TOTAL_AMOUNT' | translate}}
+                </div>
+                <div class="box-data-info">{{infoAmount.amount | currency:'EUR'}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_FINANCING.TERM' | translate}}
+                </div>
+                <div class="box-data-info">{{infoAmount.months}} {{'HOME.COMPONENTS.CALCULATE_BUDGETS.MONTH' | translate}}</div>
+            </div>
+            <div class="box-data-group">
+                <div class="box-data-title">
+                    {{'HOME.COMPONENTS.INFO_FINANCING.AMOUNT_FEE' | translate}}
+                </div>
+                <div class="box-data-info">{{infoAmount.monthlyPayment | currency:'EUR'}}</div>
+            </div>
+        </div>
+    </div>
+</div>

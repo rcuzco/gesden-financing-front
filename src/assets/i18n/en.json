@@ -1,0 +1,72 @@
+{
+  "SHELL": {
+    "COMPONENTS": { "HEADER":{
+      "TITLE":"Portal de autofraccionamiento_en"
+    }}
+  },
+  "HOME": {
+    "COMPONENTS": {
+      "BTN_BLOCK_BOTTOM":{
+        "BEFORE": "Anterior_en"
+      },
+      "FEASIBILITY_RESULT":{
+        "TITLE": "Resultado de viabilidad_en",
+        "TIS": "TIS_en",
+        "ASNEF": "ASNEF_en",
+        "YES_FEASIBILITY": "El paciente es autofraccionable._en",
+        "NO_FEASIBILITY": "El paciente no es autofraccionable._en"
+      },
+      "INFO_BOX":{
+        "TITLE_CUSTOMER": "Datos del cliente_en",
+        "TITLE_PACIENT": "Datos del paciente_en",
+        "N_CARD": "Nº de Tarjeta_en",
+        "NAME": "Nombre_en",
+        "LASTNAME": "Apellidos_en",
+        "TYPE_DOCUMENT": "Tipo de documento_en",
+        "CODE_DOCUMENT": "Código de documento_en",
+        "N_HISTORY": "Nº historia_en",
+        "EMAIL": "Email_en",
+        "ADDRESS": "Domicilio_en"
+      },
+      "INFO_USER":{
+        "USER":"Usuario de Gesden_en",
+        "CENTER":"Nombre del centro de la solicitud_en"
+      },
+      "NAV_TABS":{
+        "PROCESS":"Proceso de autofraccionamiento_en",
+        "REQUESTS":"Consulta de solicitudes generadas_en"
+      },
+      "MODAL":{
+        "ASK_NIF": "¿Está seguro de que la persona que efectuará los pagos del autofraccionamiento es  {{name}} {{lastName}}, con {{documentType}} {{documentId}}_en?",
+        "ASK_PEOPLE": "¿Está seguro de que el cliente que está consultando corresponde al pagador del autofraccionaminento_en?",
+        "TITLE_GESDEN":"Consulta de usuario GESDEN_en",
+        "BUTTON_YES": "Si_en",
+        "BUTTON_NO": "No_en",
+        "BUTTON_ACCEPT": "Aceptar_en"
+      },
+      "ALERT":{
+        "INCORRECT_NIF":"Debe asignar como cliente de facturación predeterminada en Gesden a la persona que efectuará los pagos del autofraccionamiento, y volver la solicitud con los datos correctos._en",
+        "INCORRECT_PEOPLE":"Debe asignar como cliente de facturación predeterminada en Gesden a la persona que efectuará los pagos del autofraccionamiento, y volver la solicitud con los datos correctos._en"
+      },
+      "BTN_BOTTOM":{
+        "NEXT":"Siguiente_en"
+      },
+      "STEP_BAR":{
+        "CONSULTA":"Consulta de viabilidad_en",
+        "SELECCION":"Selección de presupuesto y fraccionamiento_en",
+        "GENERAR":"Generar solicitud_en"
+      }
+    },
+    "CONTAINERS":{
+      "FRACTIONATION_PROCESS":{
+        "TITLE": "Proceso de AutoFraccionamiento_en",
+        "REQUEST_PROCESS": "Solicitud en proceso_en",
+        "REQUEST_KO":"Solicitud Denegada_en",
+        "REQUEST_OK":"Solicitud Aceptada_en"
+      },
+      "FEASIBILITY_REQUEST":{
+        "VIABILITY":"Consultar viabilidad_en"
+      }
+    }
+  }
+}

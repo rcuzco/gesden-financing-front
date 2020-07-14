@@ -1,0 +1,170 @@
+<div class="add-doc-skin">
+  <div class="add-doc-header u-flex u-flex-align-items-center">
+    <div class="container">
+      <div class="u-flex u-flex-justify-content-between u-flex-align-items-center">
+        <h2 class="title plus" translate="HOME.COMPONENTS.ADD_DOC.TITLE"></h2>
+        <div class="btn-block" (click)="cancelAddDoc()">
+          <button type="button" class="btn btn-lg btn-ko" translate="HOME.COMPONENTS.ADD_DOC.CLOSE"></button>
+          <div class="icn-close"></div>
+          <!-- <img class="btn-close" src="/assets/img/icons/icn-close.svg" alt="" /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="o-grid table-info">
+      <div class="o-grid__cell o-grid__cell--md-3">
+        <div translate="HOME.COMPONENTS.ADD_DOC.PATIENT_NAME"></div>
+        <div class="table-data">{{request.patient.firstName + ' ' + request.patient.lastName}}</div>
+      </div>
+      <div class="o-grid__cell">
+        <div translate="HOME.COMPONENTS.ADD_DOC.PATIENT_NIF"></div>
+        <div class="table-data">{{request.patient.docId}}</div>
+      </div>
+      <div class="o-grid__cell o-grid__cell--md-3">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_NAME"></div>
+        <div class="table-data">{{request.customer.firstName + ' ' + request.customer.lastName}}</div>
+      </div>
+      <div class="o-grid__cell">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_NIF"></div>
+        <div class="table-data">{{request.customer.docId}}</div>
+      </div>
+      <div class="o-grid__cell o-grid__cell--md-4">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_RESIDENCE"></div>
+        <div class="table-data">{{request.customer.address}}</div>
+      </div>
+      <div class="o-grid__cell ">
+        <div translate="HOME.COMPONENTS.ADD_DOC.CLIENT_EMAIL"></div>
+        <div class="table-data">{{request.customer.mail}}</div>
+      </div>
+      <div class="o-grid__cell">
+        <div translate="HOME.COMPONENTS.ADD_DOC.AMOUNT"></div>
+        <div class="table-data" *ngIf="request.financingRequestDetail">
+          {{request.financingRequestDetail.amount | currency: 'EUR'}}
+        </div>
+      </div>
+      <div class="o-grid__cell">
+        <div translate="HOME.COMPONENTS.ADD_DOC.MONTHS"></div>
+        <div class="table-data" *ngIf="request.financingRequestDetail">
+          {{request.financingRequestDetail.months}}
+          <span translate="HOME.COMPONENTS.CALCULATE_BUDGETS.MONTH"></span>
+        </div>
+      </div>
+      <div class="o-grid__cell">
+        <div translate="HOME.COMPONENTS.ADD_DOC.FEE"></div>
+        <div class="table-data" *ngIf="request.financingRequestDetail">
+          {{request.financingRequestDetail.monthlyPayment | currency: 'EUR'}}
+        </div>
+      </div>
+      <div class="o-grid__cell o-grid__cell--md-2">
+        <div translate="HOME.COMPONENTS.ADD_DOC.TIS"></div>
+        <div class="table-data">
+          {{request.financingCheckDetail.tisCheckDate | date: 'dd/MM/yyyy'}}
+          <span [translate]="'HOME.COMPONENTS.ADD_DOC.' + (request.financingCheckDetail.tisCheck ? '': 'NOT_') + 'APPROVED'"></span>
+        </div>
+      </div>
+      <div class="o-grid__cell o-grid__cell--md-2" *ngIf="request.financingCheckDetail.asnefCheckDate">
+        <div translate="HOME.COMPONENTS.ADD_DOC.ASNEF"></div>
+        <div class="table-data">
+          <span *ngIf="request.financingCheckDetail.asnefCheckDate">
+            {{request.financingCheckDetail.asnefCheckDate | date: 'dd/MM/yyyy'}}
+            <span [translate]="'HOME.COMPONENTS.ADD_DOC.' + (request.financingCheckDetail.asnefCheck ? '': 'NOT_') + 'APPROVED'"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <form [formGroup]="addDocForm" class="o-grid o-grid__cell--md-8 o-grid__cell--sm-10  add-doc-container">
+      <div *ngFor="let document of documentsToList; trackBy:trackDocuments" class="add-doc-item">
+        <div class="blue-sm-label" [ngClass]="{'required': document.required}">
+          {{ document.name }}
+        </div>
+        <div>
+          <div class="add-doc-zone" [ngClass]="{'add-doc-error': !addDocForm.controls[document.id].valid}">
+            <input class="uploader-container" (change)="fileChange($event, document.id)" type="file" formControlName="{{document.id}}" />
+            <div class="u-flex u-flex-justify-content-between u-flex-align-items-center u-width-100">
+              <div class="add-doc-zone_txt text-no-IE" translate="HOME.COMPONENTS.ADD_DOC.DRAG_FILE"></div>
+              <div class="add-doc-zone_txt text-IE" translate="HOME.COMPONENTS.ADD_DOC.NO_DRAG_FILE"></div>
+              <div class="icn-adjuntar pointer"></div>
+            </div>
+            <!-- <img src="/assets/img/icons/icn-adjuntar.svg" alt="" /> -->
+          </div>
+          <div class="doc-file">
+            <div class="doc-file-name"></div>
+            <div class="doc-file-remove">
+              <div class="doc-file-name">
+                {{this.docsToShow[document.id]?.name}}
+              </div>
+              <div class="doc-file-clear" (click)="removeDocument(document.id)">
+                <div class="icn-quitar pointer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="add-doc-item">
+        <div class="blue-sm-label required" translate="HOME.COMPONENTS.ADD_DOC.IBAN"></div>
+        <div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="iban" formControlName="iban" placeholder="" />
+          </div>
+          <div class="u-flex u-flex-align-center u-divider-left">
+
+            <!-- AÑADIR CLASE .square-check-error PARA ESTILOS EN COLOR ROJO -->
+            <div class="square-check" [ngClass]="{'square-check-error': !addDocForm.controls.isIbanTitular.valid}">
+              <input type="checkbox" id="checkbox" formControlName="isIbanTitular" />
+              <label for="checkbox"></label>
+            </div>
+            <p class="t-cyan u-divider-left t-sm required" translate="HOME.COMPONENTS.ADD_DOC.CHECK_IBAN"></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BOTÓN ADJUNTAR MANDATO -->
+      <div class="generate-order-container" *ngIf="!mandatoryShown">
+        <div class="generate-order-btn">
+          <button [disabled]="isIbanValid()" class="btn btn-secondary" translate="HOME.COMPONENTS.ADD_DOC.GENERATE_ORDER"  (click)="showMandatory()"></button>
+        </div>
+      </div>
+
+      <!-- CONTAINER DE ADJUNTAR DOCUMENTO PARA ADJUNTAR MANDATO -->
+      <div class="add-doc-item" *ngIf="mandatoryShown">
+        <div class="blue-sm-label required" translate="HOME.COMPONENTS.ADD_DOC.ADD_ORDER">
+        </div>
+        <div>
+          <div class="add-doc-zone" [ngClass]="{'add-doc-error': !addDocForm.controls[mandatoryObj.id].valid}">
+            <input class="uploader-container" (change)="fileChange($event, mandatoryObj.id)" type="file" formControlName="{{mandatoryObj.id}}" />
+            <div class="u-flex u-flex-justify-content-between u-flex-align-items-center u-width-100">
+              <div class="add-doc-zone_txt text-no-IE" translate="HOME.COMPONENTS.ADD_DOC.DRAG_FILE"></div>
+              <div class="add-doc-zone_txt text-IE" translate="HOME.COMPONENTS.ADD_DOC.NO_DRAG_FILE"></div>
+              <div class="icn-adjuntar pointer"></div>
+            </div>
+            <!-- <img src="/assets/img/icons/icn-adjuntar.svg" alt="" /> -->
+          </div>
+          <div class="doc-file">
+            <div class="doc-file-name"></div>
+            <div class="doc-file-remove">
+              <div class="doc-file-name">
+                {{this.docsToShow[mandatoryObj.id]?.name}}
+              </div>
+              <div class="doc-file-clear" (click)="removeDocument(mandatoryObj.id)">
+                <div class="icn-quitar pointer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="botonera-form-container mb-3">
+      <div class="top-absolute-line"></div>
+      <span class="campo-obl-container pt-4"><span class="t-rojo">*</span>&nbsp;<span translate="HOME.COMPONENTS.ADD_DOC.COMPULSORY_FIELD"></span></span>
+      <br>
+      <span class="campo-obl-container pt-4" translate="HOME.COMPONENTS.ADD_DOC.FORM_RULES"></span>
+      <br>
+      <div class="u-flex u-flex-justify-content-center">
+        <button type="submit" (click)="onSubmit()" class="btn btn-primary" translate="HOME.COMPONENTS.ADD_DOC.SAVE"></button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

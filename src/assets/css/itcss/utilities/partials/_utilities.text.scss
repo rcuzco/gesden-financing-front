@@ -1,0 +1,24 @@
+// Utilidades texto (tamano, alineacion y peso)
+// -------------------------
+
+.u-txt {
+  @each $size in 9, 11, 12, 14, 18, 20, 24, 26 {
+    &-#{$size} {
+      font-size: ($size / 16) * 1rem;
+    }
+  }
+  @each $align in center, right {
+    &-#{$align} {
+      text-align: #{$align};
+    }
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+}
+
+@each $weight in 300, 500 {
+  .u-weight-#{$weight} {
+    font-weight: #{$weight};
+  }
+}

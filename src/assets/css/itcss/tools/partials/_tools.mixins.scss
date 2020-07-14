@@ -1,0 +1,52 @@
+// Font-face
+// -------------------------
+
+@mixin sas-font-face($font-family-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family-name;
+    font-weight: $weight;
+    font-style: $style;
+    src: url("#{$font-path}#{$file-name}.woff2") format("woff2"), url("#{$font-path}#{$file-name}.woff") format("woff");
+  }
+}
+
+// Transiciones
+// -------------------------
+
+@mixin sas-transition($properties: all, $duration: 0.15s, $method: ease-in, $delay: 0ms) {
+  $value: ();
+
+  @each $property in $properties {
+    @if length($value) > 0 {
+      $value: append($value, unquote(",") #{$property} $duration $method $delay);
+    }
+    @else {
+      $value: append($value, #{$property} $duration $method $delay);
+    }
+  }
+
+  transition: $value;
+}
+
+// Ocultar visualmente elemento
+// -------------------------
+
+@mixin sas-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+// Indentación elemento
+// -------------------------
+
+@mixin sas-indent {
+  position: absolute;
+  left: -999999rem;
+}

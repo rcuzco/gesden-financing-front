@@ -1,0 +1,25 @@
+<sas-step-bar [stepsList]="listSteps"></sas-step-bar>
+<div class="section-status-container">
+    <h2 class="title plus">
+        {{'HOME.CONTAINERS.FRACTIONATION_PROCESS.TITLE' | translate}}
+    </h2>
+    <div class="section-status">
+        <div class="request-status" [ngClass]="{'sol-ko': koStatus, 'sol-inprogress': !financingData?.status && financingData?.status !== 0, 'sol-ok': okStatus}">
+            <span [ngClass]="{'icn-solici-denegada': koStatus, 'icn-solici-proceso': !financingData?.status && financingData?.status !== 0, 'icn-solici-registrada-aprob': okStatus}"></span>
+            {{ statusDescr | translate}}
+        </div>
+    </div>
+</div>
+<div>
+    <div class="centered-container" *ngIf="showSuccessMsg === false">
+        <sas-alert *ngIf="showAlert === true" [alertText]="textAlert"></sas-alert>
+        <sas-feasibility-request (checkViability)="checkViability()" (validateNIF)="getInfoAlert($event)"
+            [financingData]='financingData' *ngIf="activeFeasibility && financingData">
+        </sas-feasibility-request>
+        <sas-budget-selection *ngIf="activeBudget && financingData" [financingData]='financingData' (sendBudgets)="saveBudgets($event)"></sas-budget-selection>
+        <sas-generate-request *ngIf="activeGenerate && financingData" [financingData]='financingData' (generate)="generateRequest($event)"></sas-generate-request>
+    </div>
+    <div class="centered-container" *ngIf="showSuccessMsg && financingData">
+        <sas-success-msg (onPrintPDF)="setFinancingStatus($event)" [numberRequest]="financingData.id"></sas-success-msg>
+    </div>
+</div>

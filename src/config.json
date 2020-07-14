@@ -1,0 +1,8 @@
+{
+  "apiUrl": "http://dev.arrow.sanitas.dom",
+  "authToken": "Z2VzZGVuLWZpbmFuY2luZy1mcm9udDpzZWNyZXQ=",
+  "contexts": {
+    "LOGIN": "/authorization-server-ms-v1/oauth",
+    "APIS": "/gesden-financing-bff-develop"
+  }
+}

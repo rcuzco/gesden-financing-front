@@ -1,0 +1,11 @@
+@import "../../../../../variables.scss";
+
+.alert-danger {
+  background-color: $red;
+  border: 1px solid $red;
+  color: $white;
+  margin-bottom: 20px;
+  [class^="icn-"], [class*=" icn-"] {
+    color: $white;
+  }
+}

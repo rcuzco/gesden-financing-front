@@ -1,0 +1,63 @@
+@import "../../../../../variables.scss";
+
+//CALCULO DEL FRACCIONAMIENTO
+.calc-fracc-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: -0 -25px;
+  @media only screen and (max-width: 960px) {
+    flex-flow: row wrap;
+    margin: 0;
+  }
+  .tittle {
+    margin-bottom: 1rem;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+  .min-max-container {
+    color: $orange;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    justify-content: space-between;
+  }
+  .fracc-input {
+    align-items: center;
+    display: flex;
+    .form-control {
+      height: 48px;
+      margin-left: 2rem;
+      padding-right: 40px;
+      width: 150px;
+    }
+    .currency {
+      color: $orange;
+      font-size: 28px;
+      font-weight: 600;
+      position: absolute;
+      right: 14px;
+      top: 12px;
+      user-select: none;
+    }
+  }
+  .col-left,
+  .col-right {
+    padding: 0 25px;
+    width: 50%;
+    @media only screen and (max-width: 960px) {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .col-left {
+    @media only screen and (max-width: 960px) {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0;
+}

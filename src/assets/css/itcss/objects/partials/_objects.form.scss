@@ -1,0 +1,140 @@
+// Elementos y estructuras genéricas de formularios
+// -------------------------
+
+.o-form {
+  &-legend {
+    width: 100%;
+    font-weight: 500;
+    &__inner {
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: rgba($color-black, 0.1);
+      }
+      &::before {
+        @include sas-rem(margin-right, 16px);
+      }
+      &::after {
+        @include sas-rem(margin-left, 16px);
+      }
+    }
+  }
+  &-notice {
+    @include sas-rem(
+      (
+        font-size: 11px,
+        margin-top: 5px
+      )
+    );
+    color: $color-red;
+    font-weight: 300;
+  }
+  &-textarea {
+    @include sas-rem(padding, 12px 8px 28px);
+    width: 100%;
+    color: $color-night-rider;
+    background-color: rgba($color-black, 0.02);
+    border-bottom: 1px solid rgba($color-black, 0.25);
+    resize: vertical;
+    &::placeholder {
+      color: $color-raven;
+    }
+  }
+  &-file {
+    color: $color-cerulean;
+    &__btn {
+      @include sas-rem(
+        (
+          width: 72px,
+          height: 72px,
+          margin-bottom: 5px
+        )
+      );
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 50%;
+      border: 1px solid rgba($color-cerulean, 0.1);
+      color: inherit;
+    }
+  }
+  &-cage {
+    @include sas-rem(width, 288px);
+    margin-left: auto;
+    margin-right: auto;
+    &__fieldset {
+      @include sas-rem(margin-bottom, 55px);
+      position: relative;
+    }
+    &__legend {
+      @include sas-rem(
+        (
+          margin-bottom: 24px
+        )
+      );
+      width: 100%;
+    }
+    &__reminder {
+      @include sas-rem(margin-bottom, 24px);
+    }
+    &__required {
+      @include sas-rem(bottom, -25px);
+      position: absolute;
+      &::after {
+        content: "*";
+        speak: none;
+      }
+    }
+  }
+  &-filter {
+    @include sas-rem(
+      (
+        padding: 16px 16px 32px,
+        margin-left: -16px,
+        margin-right: -16px
+      )
+    );
+    position: relative;
+    background-color: $color-white-smoke;
+    @include sas-tablet-portrait-up {
+      @include sas-rem(
+        (
+          padding-top: 30px,
+          padding-bottom: 24px
+        )
+      );
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    &__close {
+      @include sas-rem(
+        (
+          width: 50px,
+          height: 50px
+        )
+      );
+      background-color: $color-white-smoke;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(-100%);
+      z-index: 1;
+    }
+    &__group {
+      animation-duration: 0.15s;
+    }
+    &--full {
+      @include sas-rem(
+        (
+          padding-left: 16px,
+          padding-right: 16px
+        )
+      );
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

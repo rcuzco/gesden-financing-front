@@ -1,0 +1,69 @@
+<sas-alert-info [hidden]="getAddDocRequest()"></sas-alert-info>
+<div [hidden]="getAddDocRequest()" class="section-status-container">
+    <h2 class="title plus">
+        {{'HOME.CONTAINERS.LIST_REQUEST.TITLE' | translate}}
+    </h2>
+    <sas-filters (filter)="filter($event)" [dates]="filterDates" [statusOptions]="statusOptions" [centersOptions]="centersOptions" [selectedCenters]="selectedCenters" [selectedStatus]="selectedStatus"></sas-filters>
+</div>
+<div class="u-overflow-x" *ngIf="showRequests" [hidden]="getAddDocRequest()">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.NAME' | translate}}</th>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.N_REQUEST' | translate}}</th>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.N_HISTORY' | translate}}</th>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.DATE' | translate}}</th>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.CENTER' | translate}}</th>
+                <th scope="col">{{'HOME.CONTAINERS.LIST_REQUEST.TABLE.STATUS' | translate}}</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let request of requests; let i = index; trackBy:trackRequests">
+            <tr (click)="showDetail(i, request.status)" [ngClass]="{'detailOpened': itemSelect[i]}">
+                <td>
+                    <div class="round-border">{{request.patient.firstName}} {{request.patient.lastName}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{request.id}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{request.medicalRecordId}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{request.creationDate | date: 'dd/MM/yyyy'}}</div>
+                </td>
+                <td>
+                    <div class="round-border">{{request.centerName}}</div>
+                </td>
+                <td [ngClass]="request.statusClass">
+                    <div class="round-border" >
+                        <div class="icn-icon-status"></div>
+                        {{request.statusDescr | translate}}
+                    </div>
+                </td>
+                <td>
+                    <div class="round-border" >
+                        <div class="icn-ver-pdf" *ngIf="hasRequestPDF(request.status)" (click)="showPDF(request.id)">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="round-border">
+                        <img *ngIf="allowShowDetail(request.status)" class="icon-arrow" src="./assets/img/icons/icn-dropdown-select.svg" alt="" />
+                    </div>
+                </td>
+            </tr>
+            <tr class="detail" *ngIf="itemSelect[i]" [ngClass]="itemSelect[i] ? 'show' : 'hide'"> 
+                <td  colspan="100%">
+                    <div class="round-border">
+                        <sas-table-detail (onSendDocValidation)="onSendDocValidation($event)" (onOpenAddDoc)="onOpenAddDoc($event)" [request]="request"></sas-table-detail>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="!requests.length" class="no-result-msg" translate="HOME.CONTAINERS.LIST_REQUEST.NO_RESULTS"></div>
+</div>
+<sas-add-doc *ngIf="getAddDocRequest()" [request]="getAddDocRequest()" (closeAddDoc)="closeAddDoc($event)"></sas-add-doc>
+<sbc-paginator [hidden]="getAddDocRequest()" className="clase" [paginationInfo]="paginationInfo" (handlePageChange)="displayActivePage($event)" hideItemsPerPageDropdown="true" hidePageSelectorDropdown="true"></sbc-paginator>

@@ -1,0 +1,57 @@
+<div class="btn-block">
+    <!-- ENLACE DESCARGAR EXCEL -->
+    <div *ngIf="showExcel" class="download-excel" (click)="downloadExcel()" translate="HOME.COMPONENTS.FILTERS.DOWNLOAD_EXCEL"></div>
+    <button type="button" class="btn btn-lg btn-primary" (click)="showFilters()">{{'HOME.COMPONENTS.FILTERS.BUTTON' | translate}}</button>
+</div>
+<div class="section-filter-container" [ngClass]="{'openFilters': openFilters}">
+    <div class="back-colors">
+        <div class="white-col">
+        </div>
+        <div class="blue-col" (click)="closeFilters()">
+        </div>
+    </div>
+    <div class="container">
+        <div class="section-filter">
+            <div class="icn-close-filter" (click)="closeFilters()">
+            </div>
+            <!-- FORM -->
+            <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+                <!-- CALENDARIO -->
+                <div class="form-group" [hidden]="!datesShow">
+                    <label for="fecha">{{'HOME.COMPONENTS.FILTERS.DATES' | translate}}</label>
+                    <sbc-input-calendar formControlName="dateFrom" [maxDate]="filterForm.get('dateTo').value"></sbc-input-calendar>
+                    <sbc-input-calendar formControlName="dateTo" [minDate]="filterForm.get('dateFrom').value"></sbc-input-calendar>
+                </div>
+                <!-- INPUT TEXT -->
+                <div *ngIf="hideFilters === false">
+                    <div class="form-group">
+                        <label for="numberHistory">{{'HOME.COMPONENTS.FILTERS.N_HISTORY' | translate}}</label>
+                        <input type="text" class="form-control" id="numberHistory" formControlName="numberHistory" placeholder="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="numberRequest">{{'HOME.COMPONENTS.FILTERS.N_REQUEST' | translate}}</label>
+                        <input type="text" class="form-control" id="numberRequest" formControlName="numberRequest" placeholder="" />
+                    </div>
+                    <!-- COMBO -->
+                    <div class="form-group">
+                        <label for="status">{{'HOME.COMPONENTS.FILTERS.STATUS' | translate}}</label>
+                        <!-- <sbc-input-select placeHolder="" id="status" formControlName="status">
+                        </sbc-input-select> -->
+                        <sbc-input-select-multiple [labelPosition]="labelPosition" [options]="statusOptions" formControlName="status"></sbc-input-select-multiple>
+                    </div>
+                    <div class="form-group" *ngIf="!filterSearchCenters">
+                        <label for="multipleCheck">{{'HOME.COMPONENTS.FILTERS.CENTER' | translate}}</label>
+                        <sbc-input-select-multiple [labelPosition]="labelPosition" [options]="centersOptions" formControlName="center"></sbc-input-select-multiple>
+                    </div>
+                    <div class="form-group" *ngIf="filterSearchCenters">
+                        <label for="as">{{'HOME.COMPONENTS.FILTERS.CENTER' | translate}}</label>
+                        <sbc-search-filter formControlName="center" [options]="filteredOptions" ajaxFiltering="true" (handlerKeyUp)="filterCenters($event)"></sbc-search-filter>
+                    </div>
+                </div>
+                <div class="btn-block">
+                    <button type="submit" class="btn btn-lg btn-primary">{{'HOME.COMPONENTS.FILTERS.SEARCH' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

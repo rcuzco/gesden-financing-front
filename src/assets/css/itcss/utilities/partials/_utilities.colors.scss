@@ -1,0 +1,10 @@
+// Clases colores
+// -------------------------
+
+@each $color, $colors in ("black": $color-black, raven: $color-raven, cerulean: $color-cerulean, "red": $color-red, night-rider: $color-night-rider, greenish-brown: $color-greenish-brown) {
+  .u-color {
+    &-#{''+$color} {
+      color: $colors;
+    }
+  }
+}

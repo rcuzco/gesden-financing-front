@@ -1,0 +1,207 @@
+@import "../../../../variables.scss";
+
+.header {
+  &-container {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+}
+.logo {
+  &-img {
+    img {
+      height: auto;
+      width: 220px;
+    }
+  }
+  &-txt {
+    color: $cyan;
+    font-size: 26px;
+    font-weight: 800;
+    padding-left: 1rem;
+  }
+}
+.user {
+  &-img {
+    font-size: 2.4rem;
+    padding-left: 1rem;
+    // border: solid 2px $navy;
+    // border-radius: 50%;
+    // height: 68px;
+    // margin-left: 1rem;
+    // overflow: hidden;
+    // position: relative;
+    // width: 68px;
+    // img {
+    //   height: auto;
+    //   position: absolute;
+    //   width: 100%;
+    //   @media only screen and (min-width: 961px) {
+    //     cursor: pointer;
+    //   }
+    // }
+  }
+  &-name {
+    color: $cyan;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 3rem;
+    // min-height: 27.41px;
+  }
+  &-company {
+    color: $grey;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+.log-out {
+  color: $orange;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 3rem 0;
+  text-decoration: underline;
+}
+.header-desktop {
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
+}
+.header-mobile {
+  display: none;
+  @media only screen and (max-width: 960px) {
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    height: 78px;
+    // width: 110%;
+    margin: 0 -30px;
+    padding: 15px;
+    .logo-mobile {
+      left: calc(50% - 130px);
+      position: relative;
+    }
+  }
+}
+
+.menu-mobile {
+  display: none;
+  &-container {
+    background-color: $white;
+    height: calc(100% + 120px);
+    z-index: 4;
+    @media only screen and (max-width: 960px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 720px) {
+      width: 65%;
+    }
+    @media only screen and (max-width: 576px) {
+      width: 85%;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    display: block;
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.8s ease;
+    width: 100%;
+    z-index: 2;
+  }
+  &-back {
+    height: 100%;
+    left: 0;
+    min-height: 100vh;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 1s ease;
+    width: 100%;
+    z-index: -1;
+  }
+  &-info {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+  }
+  .close-menu {
+    align-items: center;
+    cursor: pointer;
+    // display: flex;
+    height: 56px;
+    justify-content: center;
+    width: 56px;
+    .icn-dropdown-up {
+      font-size: 28px;
+      transform: rotate(-90deg);
+      &:before {
+        color: $orange;
+      }
+    }
+  }
+  .user-company {
+    color: $cyan;
+    font-size: 17px;
+  }
+  .nav-tab-mobile {
+    border-bottom: 1px solid $generalGrey;
+    border-top: 1px solid $generalGrey;
+    margin-top: 2rem;
+  }
+  .nav-tab-item {
+    border-left: 3px solid $cyan;
+    display: flex;
+    padding: 1.8rem;
+    transition: border-color .3s ease;
+    &:not(:last-child) {
+      border-bottom: 1px solid $generalGrey;
+    }
+    // &.selected > .nav-item-txt {
+    //   border-bottom: 2px solid $orange;
+    // }
+    .nav-tab-txt {
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+    &:hover > .nav-tab-txt,
+    &.selected > .nav-tab-txt {
+      border-bottom: 2px solid $orange;
+      transition: border-color .3s ease;
+    }
+  }
+
+  &.openMobile {
+    @media only screen and (max-width: 960px) {
+      left: 0;
+    }
+  }
+}
+.burger-menu-img {
+  height: 24px;
+}
+.logo-mobile-img {
+  height: 50px;
+}
+.disconect-container {
+  background-color: $white;
+  border-bottom: 3px solid $orange;
+  border-radius: 6px;
+  bottom: -65px;
+  box-shadow: 0 2px 4px 1px rgba(179, 179, 179, 0.65);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 1.5rem 2rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
+}

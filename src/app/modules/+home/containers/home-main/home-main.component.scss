@@ -1,0 +1,82 @@
+@import "../../../../../assets/css/itcss/settings/settings";
+@import "../../../../../assets/css/itcss/tools/tools";
+@import "../../../../../variables.scss";
+
+$module: $prefix+"home-main";
+
+#{$module} {
+  @include sas-rem(padding-top, 16px);
+
+  @include sas-tablet-portrait-up {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::ng-deep {
+    #{$prefix}select {
+      @include sas-rem(width, 245px);
+      margin-left: auto;
+      margin-right: auto;
+
+      @include sas-tablet-portrait-up {
+        @include sas-rem(width, 200px);
+      }
+    }
+  }
+
+  &__wrap {
+    @include sas-rem(padding-right, 3px);
+
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.home-content {
+  &-top {
+    box-shadow: 0 4px 4px 0 $navShadow;
+    position: relative;
+    z-index: 2;
+  }
+
+  &-main {
+    margin-bottom: 3rem;
+  }
+}
+
+.info-user {
+  &-container {
+    display: flex;
+    font-size: 1.7rem;
+
+    //Corrige el margen y padding del .container
+    @media only screen and (max-width: 960px) {
+      margin: 0 -30px;
+    }
+  }
+
+  &-item {
+    // padding-right: 2rem;
+    align-items: center;
+    display: flex;
+    height: 59px;
+    padding-left: 2rem;
+  }
+}
+
+[class^="icn-"],
+[class*=" icn-"] {
+  color: $orange;
+  font-size: 24px;
+  padding-right: 15px;
+}
+
+.add-doc {
+  &-header {
+    background-color: $blueBgTable;
+    box-shadow: 0 2px 4px 0 $navShadow;
+    height: 100px;
+  }
+}

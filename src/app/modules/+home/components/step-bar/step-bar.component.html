@@ -1,0 +1,13 @@
+<div class="step-bar-container">
+    <div class="step-items-container">
+        <div *ngFor="let step of stepsList | keys" [ngClass]="{selected: step.value.id === stepActive, past: doingStep(step.value)} " class="step-item">
+            <div class="step-icon-circle">
+                <div class="step-icon" ngClass="{{step.value.icon}}">
+                </div>
+            </div>
+            <div class="step-text">
+                {{step.value.name | translate}}
+            </div>
+        </div>
+    </div>
+</div>

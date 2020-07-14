@@ -1,0 +1,4 @@
+export const BUDGET_CONSTANTS = {
+  DECIMALS: 2,
+  PERCENTAJE: 100
+};

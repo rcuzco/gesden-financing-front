@@ -1,0 +1,139 @@
+// Botones
+// -------------------------
+$module: ".o-btn";
+#{$module} {
+  @include sas-rem( ( font-size: 14px, height: 48px, padding-left: 14px, padding-right: 14px));
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+  color: $color-white;
+  background-color: $color-cerulean;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition-property: background-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    height: 100%;
+  }
+  &__ico {
+    &-left {
+      @include sas-rem(margin-right, 8px);
+    }
+    &-right {
+      @include sas-rem(margin-left, 8px);
+    }
+  }
+  &--secondary {
+    background-color: $color-white;
+    color: $color-cerulean;
+    border: 1px solid $color-cerulean;
+  }
+  &--terciary {
+    background-color: $color-pale-grey;
+    color: $color-cerulean;
+  }
+  &--left {
+    text-align: left;
+    #{$module}__wrap {
+      justify-content: flex-start;
+    }
+  }
+  &--flow {
+    @include sas-tablet-desktop-only {
+      #{$module}__flow {
+        @include sas-rem(font-size, 13px);
+      }
+      #{$module}__block {
+        display: block;
+      }
+    }
+  }
+  &--download {
+    @include sas-rem( ( font-size: 14px));
+    padding-left: 0;
+    padding-right: 0;
+    #{$module}__wrap {
+      @include sas-rem( ( padding-left: 80px, padding-right: 40px));
+      align-items: flex-start;
+      flex-direction: column;
+      text-align: left;
+      position: relative;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .o-ico {
+      position: absolute;
+    }
+    #{$module}__ico {
+      &-left,
+      &-right {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &-left {
+        @include sas-rem( ( font-size: 48px, left: 20px));
+      }
+      &-right {
+        @include sas-rem( ( right: 12px, font-size: 24px));
+      }
+    }
+    #{$module}__note {
+      @include sas-rem( ( margin-top: 5px, font-size: 13px));
+      font-weight: 300;
+      color: $color-raven;
+    }
+  }
+  &--xsm,
+  &--sm,
+  &--xl {
+    border-radius: 8px;
+  }
+  &--xsm {
+    @include sas-rem(height, 32px);
+  }
+  &--sm {
+    @include sas-rem(height, 40px);
+    #{$module}__ico-wrap {
+      font-weight: 500;
+    }
+  }
+  &--xl {
+    @include sas-rem( ( font-size: 16px, height: 56px));
+  }
+  &--auto {
+    width: auto;
+  }
+  &--active,
+  &:disabled {
+    pointer-events: none;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+  &--active,
+  &:hover,
+  &:active {
+    border-color: transparent;
+    #{$module}__note,
+    .o-ico {
+      color: inherit;
+    }
+  }
+  &:hover {
+    color: $color-white;
+    background-color: $color-dark-cerulean;
+  }
+  &--active,
+  &:active {
+    color: $color-night-rider;
+    background-color: $color-silver;
+  }
+}

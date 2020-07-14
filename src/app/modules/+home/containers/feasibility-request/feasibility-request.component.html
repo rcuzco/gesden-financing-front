@@ -1,0 +1,9 @@
+<sas-info-box [infoFinancing]="financingData?.patient"></sas-info-box>
+<sas-info-box [infoFinancing]="financingData?.customer"></sas-info-box>
+<div class="btn-block" *ngIf="!financingData?.financingCheckDetail && okStatus">
+    <button type="button" class="btn btn-lg btn-primary" (click)="emitCheckViability()">{{'HOME.CONTAINERS.FEASIBILITY_REQUEST.VIABILITY' | translate}}</button>
+</div>
+<sas-feasibility-result *ngIf="financingData?.financingCheckDetail" [infoFeasibility]="financingData?.financingCheckDetail"></sas-feasibility-result>
+<sas-btn-block-bottom *ngIf="okStatus" [textButton]="'HOME.COMPONENTS.BTN_BOTTOM.NEXT'" [disabled]="controlDisabled()" (nextButton)="nextStep()"></sas-btn-block-bottom>
+<sbc-modal [(open)]="openModal" [primaryAction]="yesButton" [secondaryAction]="noButton"
+    title="{{'HOME.CONTAINERS.FEASIBILITY_REQUEST.VIABILITY' | translate}}" bodyTitle="{{titleModal}}"></sbc-modal>

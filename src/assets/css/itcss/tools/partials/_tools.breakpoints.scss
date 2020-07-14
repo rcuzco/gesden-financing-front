@@ -1,0 +1,64 @@
+// Breakpoints
+// -------------------------
+
+@mixin sas-tablet-portrait-up {
+  @media (min-width: #{$screen-tablet-portrait}) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-landscape-up {
+  @media (min-width: #{$screen-tablet-landscape}) {
+    @content;
+  }
+}
+
+@mixin sas-laptop-up {
+  @media (min-width: #{$screen-laptop}) {
+    @content;
+  }
+}
+
+@mixin sas-desktop-up {
+  @media (min-width: #{$screen-desktop}) {
+    @content;
+  }
+}
+
+@mixin sas-full-up {
+  @media (min-width: #{$screen-full}) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-only {
+  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-portrait-only {
+  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-tablet-landscape) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-landscape-only {
+  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-tablet-landscape) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-desktop-only {
+  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-desktop) {
+    @content;
+  }
+}
+
+@mixin sas-tablet-desktop-up {
+  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-tablet-landscape) and (orientation: portrait),
+    (min-device-width: $screen-tablet-landscape) and (max-device-width: $screen-laptop) and (-webkit-min-device-pixel-ratio: 2),
+    (min-width: $screen-desktop) {
+    @content;
+  }
+}

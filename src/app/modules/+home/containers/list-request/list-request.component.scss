@@ -1,0 +1,82 @@
+@import "../../../../../variables.scss";
+
+.round-border {
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+
+  &-track {
+    background-color: $generalGrey;
+  }
+
+  &-thumb {
+    background-color: $cyan;
+    border-radius: 4px;
+    width: 4px;
+  }
+}
+
+// animacion despliegue detalle
+.collapsing {
+  transition: none;
+}
+
+.hide {
+  visibility: collapse;
+  ::ng-deep {
+    .o-grid,
+    .botonera {
+      animation: fade-out 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
+}
+
+.show {
+  visibility: visible;
+  ::ng-deep {
+    .o-grid,
+    .botonera {
+      animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.u-overflow-x {
+  // overflow-x: auto;
+  overflow-y: hidden;
+}
+
+td {
+  &:nth-child(1),
+  &:nth-child(5),
+  &:nth-child(6) {
+    max-width: 220px;
+  }
+}

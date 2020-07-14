@@ -1,0 +1,92 @@
+// Listas genericas verticales
+// -------------------------
+
+$module: ".o-list";
+
+#{$module} {
+  &__item {
+    &:not(:last-child) {
+      @include sas-rem(margin-bottom, 24px);
+    }
+  }
+  &__label {
+    @include sas-rem(
+      (
+        font-size: 12px,
+        margin-bottom: 3px
+      )
+    );
+    display: block;
+    color: $color-raven;
+  }
+  &--sm {
+    #{$module}__item {
+      @include sas-rem(margin-bottom, 8px);
+      flex: none;
+      &:not(:last-child) {
+        @include sas-rem(margin-right, 8px);
+      }
+    }
+  }
+  &--overflow {
+    @include sas-rem(width, 200px);
+    position: absolute;
+    background-color: $color-white-smoke;
+    box-shadow: 0 0 8px 0 rgba($color-black, 0.5);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+    #{$module} {
+      &__header {
+        @include sas-rem(height, 42px);
+        position: relative;
+      }
+      &__btn {
+        @include sas-rem(
+          (
+            padding: 2px,
+            top: 4px,
+            right: 8px
+          )
+        );
+        @include sas-transition(background-color);
+        position: absolute;
+        border-radius: 4px;
+        &:hover {
+          background-color: $color-dark-cerulean;
+          .o-ico {
+            color: $color-white;
+          }
+        }
+        &:active {
+          background-color: $color-silver;
+          .o-ico {
+            color: $color-night-rider;
+          }
+        }
+      }
+      &__wrap {
+        @include sas-rem(max-height, 350px);
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 8px;
+          &-thumb {
+            background-color: $color-silver;
+            border-radius: 4px;
+          }
+        }
+      }
+      &__item {
+        @include sas-rem(padding, 14px 10px);
+        margin-bottom: 0;
+        border-bottom: 1px solid $color-very-light-grey;
+      }
+    }
+    .o-btn {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}

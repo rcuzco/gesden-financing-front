@@ -1,0 +1,21 @@
+// Badges
+// -------------------------
+
+.o-badge {
+  @include sas-rem((width: 18px, height: 18px, font-size: 11px));
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  border: 1px solid $color-white;
+  border-radius: 50%;
+  background-color: $color-black;
+  color: $color-white;
+  position: absolute;
+
+  &--alert {
+    background-color: $color-red;
+    border: 1px solid $color-white;
+  }
+}

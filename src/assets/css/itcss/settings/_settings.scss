@@ -1,0 +1,58 @@
+/* 01 - SETTINGS: Variables globales
+   ========================================================================== */
+
+// Ruta tipografía
+// -------------------------
+
+$font-path: "fonts/";
+
+// Prefijo componentes
+// -------------------------
+
+$prefix: ".sas-";
+
+// Colores
+// -------------------------
+
+$color-black: #000000;
+$color-nero: #242424;
+$color-night-rider: #333333;
+$color-greyish-brown: #4a4a4a;
+$color-raven: #6c6e71;
+$color-warm-grey: #9b9b9b;
+$color-pinkish-grey: #bcbcbc;
+$color-silver: #dadbdb;
+$color-very-light-grey: #cccccc;
+$color-prussian-blue: #00335b;
+$color-dark-cerulean: #00548b;
+$color-cerulean: #0079c8;
+$color-dark-sky-blue: #409bd6;
+$color-perrywinkle: #7fbce4;
+$color-duck-egg: #e5f1f9;
+$color-light-blue-grey: #bfddf1;
+$color-ice-blue: #f5faff;
+$color-white-smoke: #f7f7f7;
+$color-pale-grey: #e9f0f4;
+$color-white: #ffffff;
+$color-eggshell: #efffda;
+$color-beige: #fcf1f0;
+$color-red: #ed0000;
+$color-jungle-green: #007a3d;
+$color-apple-green: #7ed321;
+$color-pale: #fdf6dd;
+$color-greenish-brown: #635a15;
+$color-marigold: #ffc300;
+
+// Familia tipográfica
+// -------------------------
+
+$font-sans: Montserrat, Helvetica, Verdana, sans-serif;
+
+// Breakpoints
+// -------------------------
+
+$screen-tablet-portrait: 48em; /* 768px */
+$screen-tablet-landscape: 64em; /* 1024px */
+$screen-laptop: 85.375em; /* 1366px */
+$screen-desktop: 87.5em; /* 1400 */
+$screen-full: 100em; /* 1600 */

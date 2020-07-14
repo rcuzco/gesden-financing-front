@@ -1,0 +1,29 @@
+.section-status {
+  &-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    font-weight: 800;
+    justify-content: space-between;
+    @media only screen and (max-width: 720px) {
+      display: block;
+      .section-status {
+        text-align: right;
+      }
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    align-items: flex-end;
+    flex-flow: column;
+    .title {
+      margin: 0;
+    }
+    .request-status {
+      margin: 1rem auto;
+    }
+  }
+}
+.centered-container {
+  margin: 0 auto;
+  max-width: 1024px;
+}

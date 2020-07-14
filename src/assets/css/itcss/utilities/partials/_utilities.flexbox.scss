@@ -1,0 +1,54 @@
+// Clases flexbox
+// -------------------------
+
+.u-flex {
+  display: flex;
+
+  &-inline {
+    display: inline-flex;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+
+  &-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-expand-left {
+    margin-left: auto;
+  }
+
+  &-expand-right {
+    margin-right: auto;
+  }
+
+  &-expand-top {
+    margin-top: auto;
+  }
+
+  &-align-items-center {
+    align-items: center;
+  }
+
+  &-align-items-end {
+    align-items: flex-end;
+  }
+
+  &-justify-content-center {
+    justify-content: center;
+  }
+
+  &-justify-content-end {
+    justify-content: flex-end;
+  }
+
+  &-justify-content-between {
+    justify-content: space-between;
+  }
+}

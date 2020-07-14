@@ -1,0 +1,4 @@
+<div class="btn-block-bottom">
+    <button type="button" *ngIf="showBeforeButton" (click)="backStep()" class="btn btn-terciary">{{'HOME.COMPONENTS.BTN_BLOCK_BOTTOM.BEFORE' | translate}}</button>
+    <button type="button" (click)="nextStep()" [disabled]="disabled" class="btn btn-secondary">{{textButton | translate}}</button>
+</div>

@@ -1,0 +1,10 @@
+/* Capas ITCSS 
+   (https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture)
+   ========================================================================== */
+
+@import "itcss/settings/settings";
+@import "itcss/tools/tools";
+@import "itcss/generic/generic";
+@import "itcss/elements/elements";
+@import "itcss/objects/objects";
+@import "itcss/utilities/utilities";

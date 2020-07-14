@@ -1,0 +1,114 @@
+@import "../../../../../variables.scss";
+
+.step {
+  &-bar-container {
+    background-color: $blueBg;
+    border-radius: 28px;
+    display: flex;
+    height: 54px;
+    margin-top: 4rem;
+  }
+  &-items-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  &-item {
+    align-items: center;
+    color: $cyan;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 2rem;
+    position: relative;
+    width: auto;
+  }
+  &-icon {
+    color: $cyan;
+    font-size: 28px;
+  }
+  &-icon-circle {
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $cyan;
+    border-radius: 50%;
+    color: $cyan;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    min-height: 60px;
+    min-width: 60px;
+    width: 60px;
+  }
+  &-text {
+    margin-left: 1rem;
+  }
+}
+
+.selected {
+  font-weight: 600;
+  .step-icon-circle {
+    background-color: $cyan;
+    color: $white;
+  }
+  .step-icon {
+    color: $white;
+  }
+}
+.past {
+  .step-icon-circle {
+    background-color: $pink;
+    border: 1px solid $pink;
+  }
+  .step-icon {
+    color: $white;
+  }
+  .step-text {
+    color: $pink;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .step {
+    &-bar-container {
+      height: 36px;
+      margin-bottom: 8rem;
+      margin-top: 1rem;
+    }
+    &-items-container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      position: relative;
+      top: -3px;
+    }
+    &-item {
+      align-items: center;
+      flex-flow: column;
+      height: max-content;
+      text-align: center;
+      width: 100%;
+    }
+    &-item:first-child {
+      align-items: flex-start;
+      text-align: left;
+    }
+    &-item:last-child {
+      align-items: flex-end;
+      text-align: right;
+    }
+    &-icon-circle {
+      height: 42px;
+      min-height: 42px;
+      min-width: 42px;
+      width: 42px;
+    }
+    &-text {
+      font-size: 10px;
+      line-height: 1.2;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+}

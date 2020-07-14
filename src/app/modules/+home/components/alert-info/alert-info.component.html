@@ -1,0 +1,10 @@
+<div class="alert-container" [hidden]="!show">
+    <div class="alert info" role="alert">
+        <div class="alert-txt" [innerHTML]="'HOME.COMPONENTS.ALERT_INFO.FILTERS' | translate">
+        </div>
+        <div class="alert-separator"></div>
+        <button class="alert-btn" (click)="closeAlert()">
+            {{'HOME.COMPONENTS.ALERT_INFO.STAND' | translate}}
+        </button>
+    </div>
+</div>

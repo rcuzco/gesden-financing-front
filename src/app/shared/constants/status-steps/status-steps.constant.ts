@@ -1,0 +1,5 @@
+export enum STATUSSTEP {
+    ACTIVE = 'ACTIVE',
+    NOTACTIVE = 'NOTACTIVE',
+    DOING = 'DOING'
+}

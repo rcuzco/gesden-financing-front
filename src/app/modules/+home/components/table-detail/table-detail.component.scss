@@ -1,0 +1,49 @@
+@import "../../../../../variables.scss";
+
+// animacion despliegue detalle
+.collapsing {
+  transition: none;
+}
+
+.hide {
+  visibility: collapse;
+
+  .o-grid {
+    animation: fade-out .8s cubic-bezier(.39, .575, .565, 1) both;
+  }
+}
+
+.show {
+  visibility: visible;
+
+  .o-grid,
+  .botonera {
+    animation: fade-in .8s cubic-bezier(.39, .575, .565, 1) both;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+table {
+  border-collapse: collapse;
+  overflow-x: auto;
+}

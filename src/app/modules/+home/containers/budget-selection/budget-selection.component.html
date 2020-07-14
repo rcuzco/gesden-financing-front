@@ -1,0 +1,6 @@
+<sas-alert [alertText]="alertAmountMsg" *ngIf="showAlertAmount && budgets.length"></sas-alert>
+<sas-filters (filter)="filter($event)" [dates]="filterDates"></sas-filters>
+<sas-list-budgets *ngIf="financingData" [financingBudgetDetails]="financingData.financingBudgetDetails" [filterDates]="filterDates" (selectBudgets)="getSelectBudget($event)"></sas-list-budgets>
+<sas-calculate-budgets *ngIf="showCalculateBudgetForm()" (onFormInitialized)="resetRequestCalculateBudgets()" (calculateValues)="getCalculateValues($event)" [financingRequestDetail]="financingData.financingRequestDetail"  [valoresPresupuesto]="valoresPresupuesto" [totalAmount]="totalAmount"></sas-calculate-budgets>
+<sas-btn-block-bottom [textButton]="'HOME.COMPONENTS.BTN_BOTTOM.NEXT'" [disabled]="!validForm" (backButton)="backStep()" (nextButton)="nextButton()"></sas-btn-block-bottom>
+<sbc-modal [(open)]="openModal" [primaryAction]="yesButton" [secondaryAction]="noButton" bodyTitle="{{titleModal}}"></sbc-modal>

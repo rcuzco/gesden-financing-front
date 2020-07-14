@@ -1,0 +1,8 @@
+<div class="msg msg-ok">
+    <img class="msg-icon" src="./assets/img/icn-ok.svg" alt="ok-icon" />
+    <p [innerHTML]="'HOME.COMPONENTS.SUCCESS_MSG.OK_REQUEST' | translate"></p>
+    <p>{{'HOME.COMPONENTS.SUCCESS_MSG.N_REQUEST' | translate}}: {{numberRequest}}</p>
+    <div class="btn-block">
+        <button type="button" class="btn btn-lg btn-primary" (click)="showPDF()">{{'HOME.COMPONENTS.SUCCESS_MSG.BUTTON_PRINT' | translate}}</button>
+    </div>
+</div>

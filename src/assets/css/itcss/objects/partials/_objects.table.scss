@@ -1,0 +1,52 @@
+// Elementos genéricos para tablas
+// -------------------------
+
+$module: ".o-table";
+
+#{$module} {
+  &-btn-columns {
+    @include sas-rem(
+      (
+        width: 40px,
+        height: 49px,
+        padding-top: 4px
+      )
+    );
+    top: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    &__btn {
+      @include sas-rem(
+        (
+          width: 32px,
+          height: 32px
+        )
+      );
+      @include sas-transition(background-color);
+      padding: 4px;
+      border-radius: 50%;
+    }
+    &:hover {
+      #{$module}-btn-columns {
+        &__btn {
+          background-color: $color-dark-cerulean;
+          .o-ico {
+            color: $color-white;
+          }
+        }
+      }
+    }
+    &:active {
+      #{$module}-btn-columns {
+        &__btn {
+          background-color: $color-silver;
+          .o-ico {
+            color: $color-night-rider;
+          }
+        }
+      }
+    }
+  }
+}

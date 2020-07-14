@@ -1,0 +1,20 @@
+<sbc-loading></sbc-loading>
+<div class="row">
+    <div class="home-content-top" [hidden]="!!getAddDocRequest()">
+        <div class="container">
+            <sas-nav-tabs *ngIf="user" [user]="user"></sas-nav-tabs>
+        </div>
+    </div>
+    <div class="home-content-main">
+        <div class="container">
+            <div class="info-user-container" *ngIf="!getAddDocRequest()">
+                <div class="info-user-item">
+                    <span class="icn-centro"></span> {{nameCenter}}
+                </div>
+            </div>
+            <sas-fractionation-process *ngIf="activeProcess"></sas-fractionation-process>
+            <sas-list-request [filterDates]="filterDates" *ngIf="activeListRequest && nameCenter"></sas-list-request>
+        </div>
+    </div>
+</div>
+<sbc-modal [(open)]="errorModal.statusModal" [primaryAction]="errorModal.primerButton" [type]="'ERROR'" bodyText="{{errorModal.textModal}}"></sbc-modal>
